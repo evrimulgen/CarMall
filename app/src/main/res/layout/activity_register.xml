@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_login"
+    android:orientation="vertical"
+    tools:context="com.loading.carmall.ui.activity.RegisterActivity">
+
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/transparent"
+        android:theme="@style/AppTheme.AppBarOverlay"
+        app:elevation="111dp"
+        >
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar_common"
+            android:layout_width="match_parent"
+
+            android:layout_height="48dp"
+            app:collapseIcon="@drawable/ic_navigation_back"
+            app:navigationIcon="@drawable/ic_navigation_back"
+            app:popupTheme="@style/AppTheme.PopupOverlay"
+
+            >
+
+            <TextView
+                android:id="@+id/tv_title_common"
+                style="@style/TextAppearance.Widget.AppCompat.Toolbar.Title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="注册"
+                android:textColor="@color/colorTextPrimary"/>
+        </android.support.v7.widget.Toolbar>
+    </android.support.design.widget.AppBarLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="92dp"
+                android:layout_height="92dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="26dp"
+                android:src="@drawable/test_11"/>
+
+            <!--手机号-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/sz_18"
+                android:layout_marginRight="@dimen/sz_18"
+                android:layout_marginTop="34dp"
+                android:background="@color/white"
+                android:orientation="horizontal"
+                >
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="14dp"
+                    android:layout_marginRight="6dp"
+                    android:src="@drawable/ic_login_phone"/>
+
+                <android.support.v7.widget.AppCompatEditText
+                    android:id="@+id/et_phone_num"
+                    android:layout_width="match_parent"
+                    android:layout_height="54dp"
+                    android:background="@null"
+                    android:hint="请输入手机号"
+                    android:inputType="phone"
+                    android:textColorHint="@color/colorTextHint"
+                    android:textSize="15sp"/>
+            </LinearLayout>
+
+            <!--验证码-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/sz_18"
+                android:layout_marginRight="@dimen/sz_18"
+                android:layout_marginTop="18dp"
+                android:background="@color/white"
+                android:orientation="horizontal"
+                >
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="14dp"
+                    android:layout_marginRight="6dp"
+                    android:src="@drawable/ic_yzm"/>
+
+                <android.support.v7.widget.AppCompatEditText
+                    android:id="@+id/et_yzm"
+                    android:layout_width="0dp"
+                    android:layout_height="54dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="1"
+                    android:background="@null"
+                    android:hint="验证码"
+                    android:inputType="phone"
+                    android:textColorHint="@color/colorTextHint"
+                    android:textSize="15sp"/>
+
+                <com.loading.carmall.ui.weiget.StateTextView
+                    android:id="@+id/btn_yzm"
+                    style="?android:attr/borderlessButtonStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="28dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginRight="12dp"
+                    android:clickable="false"
+                    android:gravity="center"
+                    android:padding="0dp"
+                    android:text="获取验证码"
+                    android:textColor="@color/colorTextSecondary"
+                    android:textSize="13sp"
+                    app:normalBackgroundColor="#d7d7d7"
+                    app:pressedBackgroundColor="#d7d7d7"
+                    app:radius="10dp"
+                    app:unableBackgroundColor="@android:color/holo_red_light"/>
+            </LinearLayout>
+
+            <!--用户名-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/sz_18"
+                android:layout_marginRight="@dimen/sz_18"
+                android:layout_marginTop="18dp"
+                android:background="@color/white"
+                android:orientation="horizontal"
+                >
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="14dp"
+                    android:layout_marginRight="6dp"
+                    android:src="@drawable/ic_nickname"/>
+
+                <android.support.v7.widget.AppCompatEditText
+                    android:id="@+id/et_nickname"
+                    android:layout_width="match_parent"
+                    android:layout_height="54dp"
+                    android:background="@null"
+                    android:hint="用户名"
+                    android:inputType="text"
+                    android:textColorHint="@color/colorTextHint"
+                    android:textSize="15sp"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/sz_18"
+                android:layout_marginRight="@dimen/sz_18"
+                android:layout_marginTop="18dp"
+                android:background="@color/white"
+                android:orientation="horizontal"
+                >
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="14dp"
+                    android:layout_marginRight="6dp"
+                    android:src="@drawable/ic_login_password"/>
+
+                <com.loading.carmall.ui.weiget.PasswordEditText
+                    android:id="@+id/et_password"
+                    android:layout_width="match_parent"
+                    android:layout_height="54dp"
+                    android:layout_marginRight="12dp"
+                    android:background="@null"
+                    android:hint="请输入6位数字密码"
+                    android:inputType="number"
+                    android:textSize="15sp"
+                    app:drawableTintCompat="@color/colorTextHint"
+                    app:hideDrawable="@drawable/ic_password_hidden_24dp"
+                    app:showDrawable="@drawable/ic_password_visible_24dp"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/sz_18"
+                android:layout_marginTop="6dp"
+                android:orientation="horizontal">
+
+                <CheckBox
+                    android:id="@+id/checkbox"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="2dp"
+                    android:text="我已阅读"
+                    android:textColor="@color/colorTextSecondary"
+                    android:textSize="16sp"/>
+
+                <TextView
+                    android:id="@+id/tv_agreement"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="2dp"
+                    android:text="《用户协议》"
+                    android:textColor="@color/colorTextOrange"
+                    android:textSize="16sp"/>
+            </LinearLayout>
+
+
+            <com.loading.carmall.ui.weiget.LoadingButton
+                android:id="@+id/btn_register"
+                android:layout_width="match_parent"
+                android:layout_height="64dp"
+                android:layout_marginLeft="@dimen/sz_18"
+                android:layout_marginRight="@dimen/sz_18"
+                android:layout_marginTop="20dp"
+                app:lb_btnColor="@color/backgroundOrange"
+                app:lb_btnRadius="2"
+                app:lb_btnRippleColor="#000000"
+                app:lb_btnText="注册"
+                app:lb_resetAfterFailed="true"
+                />
+
+
+        </LinearLayout>
+    </ScrollView>
+
+
+</LinearLayout>

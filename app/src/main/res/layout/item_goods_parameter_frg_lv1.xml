@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:id="@id/container"
+              android:layout_width="match_parent"
+              android:layout_height="34dp"
+              android:layout_marginBottom="1dp"
+              android:background="@android:color/white"
+              android:gravity="center_vertical"
+              android:orientation="horizontal"
+              android:paddingLeft="10dp"
+    >
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="20dp"
+        android:layout_weight="2"
+        android:gravity="right"
+        android:lines="1"
+        android:text="工信部综合油耗"
+        android:textColor="@color/colorTextHint"
+        android:textSize="15sp"
+        />
+
+    <TextView
+        android:id="@+id/content"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="5"
+        android:lines="1"
+        android:text="空间的反馈数据获得返利计算的浪费精力是啊实打实"
+        android:textColor="@color/colorTextHint"
+        android:paddingRight="20dp"
+        android:textSize="14sp"
+        />
+
+</LinearLayout>

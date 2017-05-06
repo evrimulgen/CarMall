@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:background="@color/white"
+              android:orientation="vertical">
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@color/lineGray"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingBottom="9.5dp"
+        android:paddingLeft="12.5dp"
+        android:paddingRight="18.5dp"
+        android:paddingTop="14dp">
+
+        <ImageView
+            android:id="@+id/iv_avatar"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_marginTop="-2dp"
+            android:src="@drawable/test_schedule_red_500_24dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:orientation="vertical"
+            android:paddingTop="8dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tv_username"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:text="姓名"
+                    android:textColor="@color/colorTextPrimary"
+                    android:textSize="14sp"/>
+
+                <RatingBar
+                    android:id="@+id/rb_grade"
+                    android:layout_width="wrap_content"
+                    android:layout_height="20dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="10dp"
+                    android:numStars="5"
+                    android:progressDrawable="@drawable/ratingbar"
+                    android:rating="3.5"
+                    android:stepSize="0.1"
+                    />
+            </LinearLayout>
+
+            <!--型号-->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:background="@color/eeeeee"
+                android:paddingBottom="8dp"
+                android:paddingLeft="16dp"
+                android:paddingRight="30dp"
+                android:paddingTop="8dp">
+
+                <TextView
+                    android:id="@+id/tv_model"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:lines="1"
+                    android:text="内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容"
+                    android:textColor="@color/colorTextSecondary"
+                    android:textSize="14sp"/>
+
+                <TextView android:id="@+id/tv_model_time"
+                    android:layout_marginTop="4dp"
+
+                    android:textColor="@color/colorTextHint"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tv_model"
+                    android:text="2017-01-01 17:19"/>
+
+                <TextView
+                    android:id="@+id/tv_model_color"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tv_model"
+                    android:layout_marginLeft="@dimen/sz_20"
+                    android:layout_toRightOf="@id/tv_model_time"
+                    android:layout_marginTop="4dp"
+
+                    android:textColor="@color/colorTextHint"
+                    android:text="颜色：银灰色"/>
+
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/tv_content"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="15sp"
+                android:textColor="@color/colorTextPrimary"
+                android:lines="3"
+                android:layout_marginBottom="6dp"
+                android:layout_marginTop="12dp"
+                android:text="@string/test_text"/>
+
+            <com.loading.carmall.ui.weiget.nicegridview.MultiImageViewLayout
+                android:id="@+id/nine_grid_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+
+            <TextView
+                android:id="@+id/tv_evaluation_time"
+                android:layout_marginTop="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorTextHint"
+                android:text="2017/01/01 12:45"/>
+
+
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

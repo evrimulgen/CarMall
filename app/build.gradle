@@ -1,0 +1,82 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 25
+    buildToolsVersion "25.0.2"
+    defaultConfig {
+        applicationId "com.loading.carmall"
+        resConfigs "en", "fr"//其他未显式声明的语言资源将被移除
+        minSdkVersion 17
+        targetSdkVersion 25
+        versionCode 2
+        versionName "2.0"
+        //AndroidStudio1.4已经引入过矢量绘图支持在构建时生成PNG图像。要想禁用此功能(并想使用最新支持库)，你需要在你的build.gradle里面添加vectorDrawables.useSupportLibrary = true
+        vectorDrawables.useSupportLibrary = true
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        ndk {
+            // bugly设置支持的SO库架构
+            abiFilters 'armeabi' //, 'x86', 'armeabi-v7a', 'x86_64', 'arm64-v8a'
+        }
+
+    }
+    buildTypes {
+        release {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+        debug {
+            minifyEnabled true
+            debuggable true
+            shrinkResources true
+            zipAlignEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+
+
+    repositories {
+        jcenter()
+        maven { url "https://jitpack.io" }
+        maven {
+            url 'https://dl.bintray.com/maqinglong1999/maven/'
+        }
+        mavenCentral()
+    }
+}
+
+ext.supportLibVersion = '25.3.1'
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    //    compile 'cn.jiguang.sdk:jpush:3.0.3'
+    //    compile 'cn.jiguang.sdk:jcore:1.1.1'
+    compile files('libs/BaiduLBS_Android.jar')
+    compile('com.alibaba.android:vlayout:1.0.4@aar') {
+        transitive = true
+    }
+    compile "com.android.support:appcompat-v7:${supportLibVersion}"
+    compile "com.android.support:support-v4:${supportLibVersion}"
+    compile "com.android.support:cardview-v7:${supportLibVersion}"
+    compile "com.android.support:recyclerview-v7:${supportLibVersion}"
+    compile "com.android.support:design:${supportLibVersion}"
+    compile 'com.google.guava:guava:20.0'
+    compile 'com.android.support.constraint:constraint-layout:1.0.2'
+    compile 'com.github.LuckSiege.PictureSelector:picture_library:v1.3.3'
+    compile 'com.jakewharton:butterknife:7.0.1'
+    compile 'com.google.code.gson:gson:2.8.0'
+    compile 'com.github.bumptech.glide:glide:3.7.0'
+    compile 'pub.devrel:easypermissions:0.1.7'
+    compile 'com.github.promeg:tinypinyin:1.0.0'
+    compile 'com.nineoldandroids:library:2.4.0'
+    compile 'com.squareup.okhttp3:okhttp:3.3.1'
+    compile 'com.tencent.bugly:nativecrashreport:3.1.2'
+    compile 'com.tencent.bugly:crashreport_upgrade:1.2.5'
+    compile 'com.android.support:support-v4:25.3.1'
+    testCompile 'com.squareup.leakcanary:leakcanary-android-no-op:1.5'
+    testCompile 'junit:junit:4.12'
+    debugCompile 'com.squareup.leakcanary:leakcanary-android:1.5'
+    releaseCompile 'com.squareup.leakcanary:leakcanary-android-no-op:1.5'
+}

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="tab_layout" type="id" />
+    <item name="swipe_refresh_layout" type="id" />
+    <item name="view_pager" type="id" />
+    <item name="image_view" type="id" />
+    <item name="recycler_view" type="id" />
+    <item name="text_view" type="id" />
+    <item name="tv_title" type="id" />
+    <item name="tv_nickname" type="id" />
+    <item name="tv_content" type="id" />
+    <item name="tv_price" type="id" />
+    <item name="iv_avatar" type="id" />
+    <item name="tv_confirm" type="id" />
+    <item type="id" name="FriendLife_Position"/>
+    <item type="id" name="container"/>
+    <item name="tabview_id" type="id" />
+    <item name="tabview_fragment_container" type="id" />
+
+
+    <item name="banner_indicatorId" type="id" />
+
+    <!--base reyclerview-->
+    <item name="BaseQuickAdapter_viewholder_support" type="id"/>
+    <item name="BaseQuickAdapter_swiping_support" type="id"/>
+    <item name="BaseQuickAdapter_dragging_support" type="id"/>
+    <item name="BaseQuickAdapter_databinding_support" type="id"/>
+</resources>

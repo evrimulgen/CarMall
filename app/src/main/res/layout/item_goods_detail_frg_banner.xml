@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content">
+<com.loading.carmall.ui.weiget.banner.BGABanner
+    android:id="@+id/banner"
+    app:banner_pageChangeDuration="1000"
+    app:banner_pointAutoPlayAble="true"
+    app:banner_pointAutoPlayInterval="10000"
+    app:banner_pointContainerBackground="@android:color/transparent"
+    app:banner_pointLeftRightMargin="5dp"
+    app:banner_pointDrawable="@drawable/bga_banner_selector_point_hollow"
+    app:banner_pointTopBottomMargin="6dp"
+    app:banner_transitionEffect="alpha"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/sz_180"/>
+</LinearLayout>

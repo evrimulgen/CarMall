@@ -1,0 +1,90 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+             xmlns:app="http://schemas.android.com/apk/res-auto"
+             xmlns:tools="http://schemas.android.com/tools"
+              android:orientation="vertical"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             tools:context="com.loading.carmall.ui.fragment.InformationFragment">
+    <!--bar-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/toolbar_size"
+        android:background="@color/f9f9f9"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:id="@+id/ly_location"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tv_location"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:text="定位中"
+                android:textColor="@color/colorTextPrimary"
+                android:textSize="14sp"
+                android:textStyle="bold"/>
+
+            <ImageView
+                android:layout_width="12dp"
+                android:layout_height="12dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="6dp"
+                android:src="@drawable/ic_home_bottom_arrow"/>
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:layout_marginBottom="6dp"
+            android:layout_marginLeft="12dp"
+            android:layout_marginRight="@dimen/sz_12"
+            android:layout_marginTop="6dp"
+            android:background="@drawable/shape_home_frg_search"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="@dimen/sz_16"
+                android:layout_height="@dimen/sz_16"
+                android:layout_marginLeft="@dimen/sz_10"
+                android:src="@drawable/ic_home_search"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/sz_18"
+                android:text="请搜索关键字"
+                android:textColor="@color/colorTextSecondary"/>
+        </LinearLayout>
+        <ImageView
+            android:id="@+id/iv_message"
+            android:src="@drawable/ic_message"
+            android:layout_width="26dp"
+            android:layout_marginRight="@dimen/sz_10"
+            android:layout_height="26dp"/>
+    </LinearLayout>
+
+    <android.support.design.widget.TabLayout
+        android:id="@id/tab_layout"
+        android:layout_width="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_height="wrap_content"
+        app:tabSelectedTextColor="@color/colorAccent"
+        app:tabMode="scrollable"
+
+        app:tabTextAppearance="@style/GoodsTabLayoutTextAppearance"/>
+
+    <android.support.v4.view.ViewPager
+        android:id="@id/view_pager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+      />
+</LinearLayout>

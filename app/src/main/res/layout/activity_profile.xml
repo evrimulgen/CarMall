@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.loading.carmall.ui.activity.ProfileActivity">
+
+    <include layout="@layout/common_title"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="12dp"
+        android:background="@color/eeeeee"/>
+    <!--头像-->
+    <LinearLayout
+        android:id="@+id/ly_avatar"
+        android:layout_width="match_parent"
+        android:layout_height="96dp"
+        android:layout_marginLeft="@dimen/sz_12"
+        android:layout_marginRight="@dimen/sz_12"
+        android:background="@drawable/button_rect_duck"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="头像"
+            android:textColor="@color/colorTextPrimary"
+            android:textSize="17sp"/>
+
+        <ImageView
+            android:id="@id/iv_avatar"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_marginRight="12dp"
+            android:src="@drawable/test_icon"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="26dp"
+            android:scaleType="center"
+            android:src="@drawable/ic_arrow_right"/>
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@color/lineGray"/>
+
+    <!--昵称-->
+    <LinearLayout
+        android:id="@+id/ly_nickname"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:layout_marginLeft="@dimen/sz_12"
+        android:layout_marginRight="@dimen/sz_12"
+        android:background="@drawable/button_rect_duck"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="姓名"
+            android:textColor="@color/colorTextPrimary"
+            android:textSize="17sp"/>
+
+        <TextView
+            android:id="@id/tv_nickname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="12dp"
+            android:src="@drawable/test_icon"
+            android:text="吗小布"
+            android:textColor="@color/colorTextHint"
+            android:textSize="17sp"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="26dp"
+            android:scaleType="center"
+            android:src="@drawable/ic_arrow_right"/>
+    </LinearLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@color/lineGray"/>
+
+    <!--性别-->
+    <LinearLayout
+        android:id="@+id/ly_gender"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:layout_marginLeft="@dimen/sz_12"
+        android:layout_marginRight="@dimen/sz_12"
+        android:background="@drawable/button_rect_duck"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="性别"
+            android:textColor="@color/colorTextPrimary"
+            android:textSize="17sp"/>
+
+        <TextView
+            android:id="@+id/tv_gender"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="12dp"
+            android:src="@drawable/test_icon"
+            android:text="妖"
+            android:textColor="@color/colorTextHint"
+            android:textSize="17sp"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="26dp"
+            android:scaleType="center"
+            android:src="@drawable/ic_arrow_right"/>
+    </LinearLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@color/lineGray"/>
+
+    <!--手机号-->
+    <LinearLayout
+        android:id="@+id/ly_phone_num"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:layout_marginLeft="@dimen/sz_12"
+        android:layout_marginRight="@dimen/sz_12"
+        android:background="@drawable/button_rect_duck"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="手机号"
+            android:textColor="@color/colorTextPrimary"
+            android:textSize="17sp"/>
+
+        <TextView
+            android:id="@+id/tv_phone_num"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="12dp"
+            android:src="@drawable/test_icon"
+            android:text="13804121234"
+            android:textColor="@color/colorTextHint"
+            android:textSize="17sp"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="26dp"
+            android:scaleType="center"
+            android:src="@drawable/ic_arrow_right"/>
+    </LinearLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@color/lineGray"/>
+
+    <!--邮箱-->
+    <LinearLayout
+
+        android:id="@+id/ly_email"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:layout_marginLeft="@dimen/sz_12"
+        android:layout_marginRight="@dimen/sz_12"
+        android:background="@drawable/button_rect_duck"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="邮箱"
+            android:textColor="@color/colorTextPrimary"
+            android:textSize="17sp"/>
+
+        <TextView
+            android:id="@+id/tv_email"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="12dp"
+            android:src="@drawable/test_icon"
+            android:text="吗小布"
+            android:textColor="@color/colorTextHint"
+            android:textSize="17sp"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="26dp"
+            android:scaleType="center"
+            android:src="@drawable/ic_arrow_right"/>
+    </LinearLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@color/lineGray"/>
+</LinearLayout>

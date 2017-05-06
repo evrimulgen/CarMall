@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context="com.loading.carmall.ui.activity.HomeActivity">
+    <com.loading.carmall.ui.weiget.bottomtab.TabView
+        android:id="@+id/bottom_navigation_bar"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="-2dp"
+        app:tab_imageViewHeight="26dip"
+        app:tab_imageViewWidth="26dip"
+        app:tab_tabViewDefaultPosition="0"
+        app:tab_textViewSelColor="#f19c51"
+        app:tab_textViewSize="12sp"
+        app:tab_textViewUnSelColor="#666666"/>
+
+    <FrameLayout
+        android:id="@+id/fragment_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/bottom_navigation_bar"
+        android:fitsSystemWindows="true"
+        />
+</RelativeLayout>

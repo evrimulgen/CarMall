@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.loading.carmall.ui.activity.PaySuccessActivity">
+
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/f9f9f9"
+        android:theme="@style/AppTheme.AppBarOverlay"
+        app:elevation="0dp"
+        >
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar_common"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/colorPrimary"
+            app:collapseIcon="@drawable/ic_navigation_back"
+            app:navigationIcon="@drawable/ic_navigation_back"
+            app:popupTheme="@style/AppTheme.PopupOverlay"
+
+            >
+
+            <TextView
+                android:id="@+id/tv_title_common"
+                style="@style/TextAppearance.Widget.AppCompat.Toolbar.Title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="@color/f9f9f9"
+                android:textColor="@color/colorTextPrimary"/>
+
+            <ImageView
+                android:layout_width="@dimen/sz_30"
+                android:layout_height="@dimen/sz_30"
+                android:layout_gravity="right|center_vertical"
+                android:layout_marginRight="@dimen/sz_14"
+                android:src="@drawable/ic_submit_order_waiter"/>
+        </android.support.v7.widget.Toolbar>
+    </android.support.design.widget.AppBarLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="?actionBarSize">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/sz_34"
+                android:background="@color/eeeeee"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:text="提交订单"
+                    android:textColor="@color/colorTextPrimary"/>
+
+                <View
+                    android:layout_width="@dimen/sz_44"
+                    android:layout_height="1px"
+                    android:layout_marginLeft="@dimen/sz_12"
+                    android:layout_marginRight="@dimen/sz_12"
+                    android:background="@color/colorTextPrimary"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:text="支付定金"
+                    android:textColor="@color/colorTextPrimary"/>
+
+                <View
+                    android:layout_width="@dimen/sz_44"
+                    android:layout_height="1px"
+                    android:layout_marginLeft="@dimen/sz_12"
+                    android:layout_marginRight="@dimen/sz_12"
+                    android:background="@color/colorTextPrimary"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:text="支付成功"
+                    android:textColor="@color/colorTextOrange"/>
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="22dp"
+                android:background="@drawable/shape_corners_orange"
+                android:paddingBottom="5dp"
+
+                android:paddingLeft="24dp"
+                android:paddingRight="24dp"
+                android:paddingTop="5dp"
+                android:text="恭喜你，预定成功"
+                android:textColor="@color/white"
+                android:textSize="18sp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="18dp"
+                android:textSize="20dp"
+                android:text="奥迪R8进口，豪情独家赠送豪礼"
+                android:textColor="@color/colorTextPrimary"/>
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="12dp"
+                android:text="即日起请到北京奥迪旗舰店4点支付余下款项"
+                android:textColor="@color/colorTextSecondary"
+                android:textSize="18sp"/>
+
+            <LinearLayout
+                android:layout_marginLeft="@dimen/sz_12"
+                android:layout_marginRight="@dimen/sz_12"
+android:paddingTop="24dp"
+                android:paddingBottom="24dp"
+                android:layout_marginTop="24dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/eeeeee"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingRight="20dp"
+                    android:paddingLeft="20dp">
+
+
+                    <ImageView
+                        android:layout_width="14dp"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_location"/>
+
+                    <TextView
+                        android:textSize="15sp"
+                        android:layout_marginLeft="6dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="联系地址:"
+                        android:textColor="@color/colorTextSecondary"/>
+
+                    <TextView
+                        android:lineSpacingExtra="4dp"
+                        android:layout_marginLeft="6dp"
+                        android:textSize="15sp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="北京市昌平区北洼路28号一楼底商（北京如意商务酒店对面）"
+                        android:textColor="@color/colorTextSecondary"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_marginTop="20dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingRight="20dp"
+                    android:paddingLeft="20dp">
+
+
+                    <ImageView
+                        android:layout_width="14dp"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_phone_num"/>
+
+                    <TextView
+                        android:id="@+id/textView3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="6dp"
+                        android:text="联系电话:"
+                        android:textColor="@color/colorTextSecondary"
+                        android:textSize="15sp"/>
+
+                    <TextView
+                        android:lineSpacingExtra="4dp"
+                        android:layout_marginLeft="6dp"
+                        android:textSize="15sp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="400 200 23456"
+                        android:textColor="@color/colorTextSecondary"/>
+                </LinearLayout>
+            </LinearLayout>
+
+
+            <TextView
+                android:id="@+id/tv_submit"
+                android:layout_width="match_parent"
+                android:layout_height="46dp"
+                android:layout_marginLeft="@dimen/sz_14"
+                android:layout_marginRight="@dimen/sz_14"
+                android:layout_marginTop="26dp"
+                android:background="@drawable/select_orange"
+                android:gravity="center"
+                android:text="前往我的订单"
+                android:textColor="@color/white"
+                android:textSize="20sp"/>
+
+
+        </LinearLayout>
+    </ScrollView>
+</FrameLayout>

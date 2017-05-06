@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:gravity="center"
+              android:layout_width="match_parent"
+              android:layout_height="70dp"
+    android:paddingTop="@dimen/sz_10">
+<ImageView
+    android:id="@+id/iv_brand"
+    android:layout_width="28dp"
+    android:layout_height="wrap_content"
+    android:src="@drawable/ic_brand_honda"/>
+    <TextView
+        android:id="@+id/tv_brand"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="3dp"
+        android:textColor="@color/colorTextPrimary"
+        android:text="本田"/>
+</LinearLayout>
