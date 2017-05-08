@@ -205,4 +205,41 @@
         <attr name="search_hint" format="string|reference"/><!--EditText hint-->
         <attr name="search_baground" format="reference"/><!--EditText  background-->
     </declare-styleable>
+
+
+    <!--两头seekbar-->
+    <declare-styleable name="MultiSlider">
+        <attr name="scaleMin" format="integer"/>
+        <attr name="scaleMax" format="integer"/>
+        <attr name="scaleStep" format="integer"/>
+
+        <attr name="stepsThumbsApart" format="integer"/>
+        <attr name="drawThumbsApart" format="boolean"/>
+
+        <attr name="android:thumb"/>
+        <attr name="thumbNumber" format="integer"/>
+        <attr name="android:thumbOffset"/>
+
+        <attr name="thumbValue1" format="integer"/>
+        <attr name="thumbValue2" format="integer"/>
+        <attr name="range1" format="reference"/>
+        <attr name="range2" format="reference"/>
+
+        <attr name="android:track"/>
+        <attr name="android:focusable"/>
+
+        <attr name="range" format="reference"/>
+
+        <attr name="mirrorForRTL" format="boolean"/>
+
+        <attr name="thumbColor" format="color" />
+        <attr name="trackColor" format="color" />
+        <attr name="rangeColor" format="color" />
+        <attr name="range1Color" format="color" />
+        <attr name="range2Color" format="color" />
+    </declare-styleable>
+    <declare-styleable name="MultiSliderTheme">
+        <attr name="multiSliderStyle" format="reference"/>
+    </declare-styleable>
+    <!--两头seekbar END-->
 </resources>

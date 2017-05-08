@@ -6,6 +6,34 @@
               android:orientation="vertical"
               tools:context="com.loading.carmall.ui.fragment.MineFragment">
 
+    <FrameLayout
+        android:id="@+id/toolbar_common"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="@color/colorPrimary"
+        android:orientation="horizontal"
+        app:popupTheme="@style/AppTheme.PopupOverlay"
+        >
+
+        <TextView
+            android:id="@+id/tv_title_common"
+            style="@style/TextAppearance.Widget.AppCompat.Toolbar.Title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@color/backgroundGray"
+            android:text="个人中心"
+            android:textColor="@color/colorTextPrimary"/>
+
+        <ImageView
+            android:id="@+id/iv_share"
+            android:layout_width="18dp"
+            android:layout_height="18dp"
+            android:layout_gravity="right|center_vertical"
+            android:layout_marginRight="@dimen/sz_20"
+            android:src="@drawable/ic_share"/>
+    </FrameLayout>
+
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -15,34 +43,6 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <FrameLayout
-                android:id="@+id/toolbar_common"
-                android:layout_width="match_parent"
-                android:layout_height="48dp"
-                android:background="@color/colorPrimary"
-                android:orientation="horizontal"
-                app:popupTheme="@style/AppTheme.PopupOverlay"
-
-                >
-
-                <TextView
-                    android:id="@+id/tv_title_common"
-                    style="@style/TextAppearance.Widget.AppCompat.Toolbar.Title"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:background="@color/backgroundGray"
-                    android:text="个人中心"
-                    android:textColor="@color/colorTextPrimary"/>
-
-                <ImageView
-                    android:id="@+id/iv_share"
-                    android:layout_width="18dp"
-                    android:layout_height="18dp"
-                    android:layout_gravity="right|center_vertical"
-                    android:layout_marginRight="@dimen/sz_20"
-                    android:src="@drawable/ic_share"/>
-            </FrameLayout>
 
             <RelativeLayout
                 android:layout_width="match_parent"
