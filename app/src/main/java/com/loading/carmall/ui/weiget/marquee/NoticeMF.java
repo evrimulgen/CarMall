@@ -5,12 +5,11 @@ import android.view.LayoutInflater;
 import android.widget.TextView;
 
 import com.loading.carmall.R;
+import com.loading.carmall.bean.ArticleGetheadlinesBean;
 
-/**
- * Created by 马小布 on 2017/4/7.
- */
+import java.util.List;
 
-public class NoticeMF extends MarqueeFactory<TextView, String> {
+public class NoticeMF extends MarqueeFactory<TextView, ArticleGetheadlinesBean.DataBean> {
     private LayoutInflater inflater;
 
     public NoticeMF(Context mContext) {
@@ -19,9 +18,9 @@ public class NoticeMF extends MarqueeFactory<TextView, String> {
     }
 
     @Override
-    public TextView generateMarqueeItemView(String data) {
+    public TextView generateMarqueeItemView(ArticleGetheadlinesBean.DataBean data) {
         TextView mView = (TextView) inflater.inflate(R.layout.notice_item, null);
-        mView.setText(data);
+        mView.setText(data.getTitle());
         return mView;
     }
 }

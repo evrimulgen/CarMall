@@ -11,15 +11,14 @@ import java.util.List;
  * Created by GongWen on 16/12/20.
  * 负责解析提供数据及事件监听
  */
-
 public abstract class MarqueeFactory<T extends View, E> {
     protected Context mContext;
-    protected OnItemClickListener onItemClickListener;
-    protected List<T> mViews;
+    private OnItemClickListener onItemClickListener;
+    private List<T> mViews;
     protected List<E> datas;
     private MarqueeView mMarqueeView;
 
-    public MarqueeFactory(Context mContext) {
+    MarqueeFactory(Context mContext) {
         this.mContext = mContext;
     }
 
@@ -35,11 +34,13 @@ public abstract class MarqueeFactory<T extends View, E> {
         for (int i = 0; i < datas.size(); i++) {
             E data = datas.get(i);
             T mView = generateMarqueeItemView(data);
+            //noinspection unchecked
             mView.setTag(new ViewHolder(mView, data, i));
             mView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
                     if (onItemClickListener != null) {
+                        //noinspection unchecked
                         onItemClickListener.onItemClickListener((ViewHolder<T, E>) view.getTag());
                     }
                 }
@@ -52,11 +53,12 @@ public abstract class MarqueeFactory<T extends View, E> {
     }
 
     //适用于多次（含一次）更新数据源
+    @SuppressWarnings("unused")
     public void resetData(final List<E> datas) {
         if (datas == null || datas.size() == 0) {
             return;
         }
-        if (mMarqueeView == null || (mMarqueeView != null && this.datas == null)) {
+        if (mMarqueeView == null || this.datas == null) {
             setData(datas);
         } else {
             //防止多次更新数据可能导致的叠影问题
@@ -88,7 +90,7 @@ public abstract class MarqueeFactory<T extends View, E> {
         this.onItemClickListener = mOnItemClickListener;
     }
 
-    public List<T> getMarqueeViews() {
+    List<T> getMarqueeViews() {
         return mViews;
     }
 
@@ -97,7 +99,7 @@ public abstract class MarqueeFactory<T extends View, E> {
     }
 
     public static class ViewHolder<V extends View, P> {
-        public V mView;
+        V mView;
         public P data;
         public int position;
 
@@ -108,7 +110,7 @@ public abstract class MarqueeFactory<T extends View, E> {
         }
     }
 
-    public void setAttachedToMarqueeView(MarqueeView marqueeView) {
+    void setAttachedToMarqueeView(MarqueeView marqueeView) {
         this.mMarqueeView = marqueeView;
     }
 }

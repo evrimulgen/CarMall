@@ -62,8 +62,6 @@ import okhttp3.Request;
  *　　　　　　　　　　┗┻┛　┗┻┛+ + + +
  */
 public class GroupBuyActivity extends BaseAty implements SwipeRefreshLayout.OnRefreshListener, BaseQuickAdapter.RequestLoadMoreListener {
-
-
     @Bind(R.id.tv_title_common)
     TextView mTvTitleCommon;
     @Bind(R.id.toolbar_common)
@@ -163,6 +161,7 @@ public class GroupBuyActivity extends BaseAty implements SwipeRefreshLayout.OnRe
 
     @Override
     public void initData() {
+        //品牌列表
         OkHttpUtils.post()
                 .tag(this)
                 .url(UrlPath.CART_GETHOTBRAND)
@@ -181,8 +180,7 @@ public class GroupBuyActivity extends BaseAty implements SwipeRefreshLayout.OnRe
 
                     @Override
                     public void onSuccess(String response, int id) {
-
-                        Log.d("GroupBuyActivity", "处理热门品牌" + response);
+                        Log.d("GroupBuyActivity", "团购列表:" + response);
                         Gson gson = new Gson();
                         List<CartGethotbrandBean.DataBean> hotBrandBean
                                 = gson.fromJson(response, CartGethotbrandBean.class).getData();
@@ -195,7 +193,7 @@ public class GroupBuyActivity extends BaseAty implements SwipeRefreshLayout.OnRe
 
                     @Override
                     public void onError(Call call, Exception e, int id) {
-                        Toast.makeText(mActivity, "接口：CART_GETBRAND————服务器问题", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(mActivity, "接口：CART_GETHOTBRAND————服务器问题", Toast.LENGTH_SHORT).show();
                     }
                 });
 
@@ -220,10 +218,7 @@ public class GroupBuyActivity extends BaseAty implements SwipeRefreshLayout.OnRe
 
                     @Override
                     public void onSuccess(String response, int id) {
-
                         Log.d("GroupBuyActivity", "PURCHASE_GROUP_BRANDLIST" + response);
-
-
                     }
 
                     @Override

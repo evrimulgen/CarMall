@@ -15,11 +15,6 @@ import android.widget.TextView;
 
 import com.loading.carmall.R;
 
-/**
- * @author deadline
- * @time 2016-11-07
- */
-
 public class StateTextView extends android.support.v7.widget.AppCompatTextView {
 
     //text color

@@ -1,5 +1,6 @@
 package com.loading.carmall.ui.weiget.searchpage;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.support.v7.widget.GridLayoutManager;
@@ -21,15 +22,25 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.loading.carmall.R;
+import com.loading.carmall.bean.SearchAtyHotBean;
+import com.loading.carmall.bean.SearchAtyResultBean;
 import com.loading.carmall.ui.weiget.InnerRecyclerView;
+import com.loading.carmall.ui.weiget.reacyclerviewhelper.BaseQuickAdapter;
+import com.loading.carmall.ui.weiget.reacyclerviewhelper.BaseViewHolder;
+import com.loading.carmall.utils.ScreenUtils;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Random;
-
 
 /**
- * Created by liuyunming on 2016/7/6.
+ * Created by 马小布 on 2017/5/9.
+ * Project : recycler adapter封装
+ * Program Name :  com.loading.carmall.ui.weiget.searchpage.SearchPageCar.java
+ * Author :马庆龙 on 2017/5/9 11:58
+ * email:maxiaobu1999@163.com
+ * 功能：搜索控件
+ * 伪码：
+ * 待完成：
  */
 public class SearchPageCar extends LinearLayout {
 
@@ -38,7 +49,6 @@ public class SearchPageCar extends LinearLayout {
     Context context;
     private ImageView ib_searchtext_delete;
     private EditText et_searchtext_search;
-    private LinearLayout searchview;
     private Button bt_text_search_back;
     private TextView tvclearolddata;
 
@@ -46,14 +56,17 @@ public class SearchPageCar extends LinearLayout {
     //历史搜索
     private InnerRecyclerView mRvHistorySearch;
     private SearchHistoryAdapter mSearchHistoryAdapter;
-    private ArrayList<String> OldDataList = new ArrayList<String>();
+    private ArrayList<String> OldDataList = new ArrayList<>();
     //热门搜索
 //    FlowLayout hotflowLayout;
     RecyclerView mRvHotSearch;
 
     private String backtitle = "取消", searchtitle = "搜索";
     public OnClickListener TextViewItemListener;
+    @SuppressWarnings("FieldCanBeLocal")
     private int countOldDataSize = 15;//默认搜索记录的条数， 正确的是传入进来的条数
+    private RecyclerView mRvResult;
+    private BaseQuickAdapter<SearchAtyResultBean.DataBean, BaseViewHolder> mResultAdapter;
 
 
     public SearchPageCar(Context context) {
@@ -83,13 +96,15 @@ public class SearchPageCar extends LinearLayout {
 
 
     private void InitView() {
-
         backtitle = getResources().getString(R.string.search_cancel);
         searchtitle = getResources().getString(R.string.search_verify);
 
-
-        searchview = (LinearLayout) LayoutInflater.from(context).inflate(R.layout.search_page_car, null);
-        searchview.setLayoutParams(new LinearLayoutCompat.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT));
+        @SuppressLint("InflateParams") LinearLayout searchview =
+                (LinearLayout) LayoutInflater.from(context)
+                        .inflate(R.layout.search_page_car, null);
+        searchview.setLayoutParams(new LinearLayoutCompat
+                .LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT
+                , ViewGroup.LayoutParams.WRAP_CONTENT));
         //把获得的view加载到这个控件中
         addView(searchview);
         //把两个按钮从布局文件中找到
@@ -105,6 +120,28 @@ public class SearchPageCar extends LinearLayout {
         mRvHistorySearch = (InnerRecyclerView) searchview.findViewById(R.id.Rv_history_search);
         mRvHotSearch = (RecyclerView) searchview.findViewById(R.id.rv_hot_search);
 
+        mRvResult = (RecyclerView) searchview.findViewById(R.id.rv_result);
+        mRvResult.setLayoutManager(new LinearLayoutManager(context));
+        mRvResult.setHasFixedSize(true);
+        mResultAdapter = new BaseQuickAdapter<SearchAtyResultBean.DataBean,
+                BaseViewHolder>(R.layout.item_search_aty_result) {
+            @Override
+            protected void convert(BaseViewHolder helper, SearchAtyResultBean.DataBean item) {
+
+            }
+        };
+        mResultAdapter.openLoadAnimation(BaseQuickAdapter.ALPHAIN);
+        View notDataView = LayoutInflater.from(context)
+                .inflate(R.layout.empty_view,
+                        (ViewGroup) mRvResult.getParent(), false);
+        LinearLayout container = (LinearLayout) notDataView.findViewById(R.id.container);
+        ViewGroup.LayoutParams layoutParams = container.getLayoutParams();
+        layoutParams.height = ScreenUtils.getScreenHeight(context) - 200;
+
+        mRvResult.setAdapter(mResultAdapter);
+
+        mResultAdapter.setEmptyView(notDataView);
+
         setLinstener();
 
     }
@@ -115,20 +152,17 @@ public class SearchPageCar extends LinearLayout {
 
         @Override
         public void afterTextChanged(Editable s) {
-            // TODO Auto-generated method stub
         }
 
         @Override
         public void beforeTextChanged(CharSequence s, int start, int count,
                                       int after) {
-            // TODO Auto-generated method stub
         }
 
         //当文本改变时候的操作
         @Override
         public void onTextChanged(CharSequence s, int start, int before,
                                   int count) {
-            // TODO Auto-generated method stub
             //如果编辑框中文本的长度大于0就显示删除按钮否则不显示
             if (s.length() > 0) {
                 ib_searchtext_delete.setVisibility(View.VISIBLE);
@@ -142,13 +176,10 @@ public class SearchPageCar extends LinearLayout {
     }
 
     private void setLinstener() {
-
-
         //给删除按钮添加点击事件
         ib_searchtext_delete.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
-                // TODO Auto-generated method stub
                 et_searchtext_search.setText("");
             }
         });
@@ -183,7 +214,11 @@ public class SearchPageCar extends LinearLayout {
                 } else {
 //                    Toast.makeText(context, "点击button  返回", Toast.LENGTH_SHORT).show();
                     if (sCBlistener != null)
-                        sCBlistener.Back();
+                        if (mRvResult.getVisibility() == VISIBLE) {
+                            mRvResult.setVisibility(GONE);
+                        } else {
+                            sCBlistener.Back();
+                        }
                 }
             }
         });
@@ -223,21 +258,21 @@ public class SearchPageCar extends LinearLayout {
      * @param hotdata     热门搜索数据集合
      * @param sCb         事件处理监听
      */
-    public void initData(List<String> olddatalist, List<String> hotdata, setSearchCallBackListener sCb) {
+    public void initData(List<String> olddatalist,
+                         List<SearchAtyHotBean.DataBean> hotdata,
+                         setSearchCallBackListener sCb) {
 
         SetCallBackListener(sCb);
-
 //        hotflowLayout.removeAllViews();
         OldDataList.clear();
         if (olddatalist != null)
             OldDataList.addAll(olddatalist);
 
-
 //        countOldDataSize = OldDataList.size();
         mRvHistorySearch.setLayoutManager(new LinearLayoutManager(context));
 //        mRvHistorySearch.setNestedScrollingEnabled(false);
         mRvHistorySearch.setNestedScrollingEnabled(false);
-        mSearchHistoryAdapter = new SearchHistoryAdapter(context, OldDataList, this);
+        mSearchHistoryAdapter = new SearchHistoryAdapter( OldDataList);
         mRvHistorySearch.setAdapter(mSearchHistoryAdapter);
 
 
@@ -247,12 +282,13 @@ public class SearchPageCar extends LinearLayout {
         mSearchHistoryAdapter.setOnItemClickListener(new SearchHistoryAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(View view, String tarid, int position) {
-                //                Toast.makeText(context, "历史记录点击"+OldDataList.get(position), Toast.LENGTH_SHORT).show();
                 if (sCBlistener != null) {
                     sCBlistener.Search(OldDataList.get(position).trim());
                 }
             }
         });
+
+
     }
 
 
@@ -270,24 +306,20 @@ public class SearchPageCar extends LinearLayout {
         }
     }
 
-
-    /**
-     * 生成随机数
-     *
-     * @param max 最大值
-     * @param min 最小值
-     * @return
-     */
-    public int MyRandom(int min, int max) {
-
-        Random random = new Random();
-        int s = random.nextInt(max) % (max - min + 1) + min;
-        return s;
-    }
-
-
     //对外开发的接口
 //--------------------------------------------------------------------------------------
+
+    public void showResult(List<SearchAtyResultBean.DataBean> resultDatas) {
+        mRvResult.setVisibility(VISIBLE);
+        mResultAdapter.setNewData(resultDatas);
+    }
+
+    public void hideResult() {
+        mRvResult.setVisibility(GONE);
+    }
+    public boolean isResultShow(){
+        return mRvResult.getVisibility()==VISIBLE;
+    }
 
     /**
      * @author liuyunming
@@ -297,22 +329,22 @@ public class SearchPageCar extends LinearLayout {
         /**
          * @param str 搜索关键字
          */
-        public void Search(String str);
+        void Search(String str);
 
         /**
          * 后退
          */
-        public abstract void Back();
+        void Back();
 
         /**
          * 清除历史搜索记录
          */
-        public abstract void ClearOldData();
+        void ClearOldData();
 
         /**
          * 保存搜索记录
          */
-        public abstract void SaveOldData(ArrayList<String> allHistoryDataList);
+        void SaveOldData(ArrayList<String> allHistoryDataList);
 
     }
 

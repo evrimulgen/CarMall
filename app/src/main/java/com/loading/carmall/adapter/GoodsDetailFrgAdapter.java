@@ -20,10 +20,6 @@ import butterknife.Bind;
 import butterknife.ButterKnife;
 
 
-/**
- * Created by 马小布 on 2016/8/31.
- * 热门动态
- */
 public class GoodsDetailFrgAdapter extends RecyclerView.Adapter implements BGABanner.Delegate<ImageView, Integer>, BGABanner.Adapter<ImageView, Integer> {
 
 

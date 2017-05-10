@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              android:orientation="vertical">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="74dp"
+        >
+
+        <LinearLayout
+            android:id="@+id/ly_buy"
+            android:layout_width="180dp"
+            android:layout_height="54dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="16dp"
+            android:background="@drawable/shape_rectangle_orange_line"
+            android:orientation="horizontal"
+            >
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="8dp"
+                android:src="@drawable/ic_second_hand_buy"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="6dp"
+                android:text="买车"
+                android:textColor="@color/colorTextOrange"
+                android:textSize="18sp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:layout_marginBottom="4dp"
+                android:layout_marginRight="6dp"
+
+                android:gravity="right"
+                android:text="多种车源"
+                android:textColor="@color/colorTextPrimary"
+                android:textSize="16sp"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ly_sale"
+            android:layout_width="180dp"
+            android:layout_height="54dp"
+            android:layout_gravity="center_vertical|end"
+            android:layout_marginEnd="16dp"
+            android:background="@drawable/shape_rectangle_orange_line"
+            android:orientation="horizontal"
+            >
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="8dp"
+                android:src="@drawable/ic_second_hand_sale"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="6dp"
+                android:text="买车"
+                android:textColor="@color/colorTextOrange"
+                android:textSize="18sp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:layout_marginBottom="4dp"
+                android:layout_marginEnd="6dp"
+
+                android:gravity="end"
+                android:text="多种车源"
+                android:textColor="@color/colorTextPrimary"
+                android:textSize="16sp"/>
+        </LinearLayout>
+    </FrameLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/backgroundGray"
+        android:paddingBottom="4dp"
+        android:paddingStart="16dp"
+        android:paddingTop="4dp"
+        android:text="筛选条件"
+        android:textColor="@color/colorTextSecondary"
+        android:textSize="16sp"
+        tools:ignore="RtlSymmetry"/>
+    <com.loading.carmall.ui.weiget.flowlayout.TagFlowLayout
+        android:id="@+id/flow_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:gravity="center"
+        app:max_select="1"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/backgroundGray"
+        android:paddingBottom="4dp"
+        android:paddingStart="16dp"
+        android:paddingTop="4dp"
+        android:text="好车推荐"
+        android:textColor="@color/colorTextSecondary"
+        android:textSize="16sp"
+        tools:ignore="RtlSymmetry"/>
+</LinearLayout>

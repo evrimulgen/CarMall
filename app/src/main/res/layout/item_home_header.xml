@@ -83,7 +83,7 @@
             <ImageView
                 android:layout_width="36dp"
                 android:layout_height="36dp"
-                android:src="@drawable/ic_home_4s"/>
+                android:src="@drawable/ic_home_two_hand"/>
 
             <TextView
                 android:layout_width="wrap_content"

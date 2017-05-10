@@ -140,7 +140,8 @@ public class SubmitOrderActivity extends BaseAty implements View.OnClickListener
         mFlowLayout.setAdapter(new TagAdapter<String>(mVals) {
             @Override
             public View getView(FlowLayout parent, int position, String s) {
-                TextView tv = (TextView) LayoutInflater.from(mActivity).inflate(R.layout.item_submit_order_model,
+                TextView tv = (TextView) LayoutInflater.from(mActivity)
+                        .inflate(R.layout.item_submit_order_model,
                         mFlowLayout, false);
                 tv.setText(s);
                 return tv;

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+          android:id="@id/text_view"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_gravity="center"
+          android:background="@drawable/second_hand_filter_bg"
+          android:layout_margin="6dp"
+
+          android:gravity="center"
+          android:orientation="vertical"
+          android:text="菲力宾"
+          android:textColor="@color/colorTextPrimary"
+          android:textSize="18sp">
+
+</TextView>

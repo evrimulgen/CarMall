@@ -5,16 +5,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-android:background="@color/eeeeee"
+    android:background="@color/eeeeee"
     android:orientation="vertical"
     tools:context="com.loading.carmall.ui.activity.SearchActivity">
 
 
-
     <com.loading.carmall.ui.weiget.searchpage.SearchPageCar
+        android:id="@+id/searchlayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/searchlayout"
-        app:search_hint="@string/search_hint"
-        app:search_baground="@null"/>
+        app:search_baground="@null"
+        app:search_hint="@string/search_hint"/>
 </LinearLayout>

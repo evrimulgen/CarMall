@@ -7,21 +7,19 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.loading.carmall.R;
 import com.loading.carmall.bean.CartGethotbrandBean;
-import com.loading.carmall.bean.HomeFrgBodyBean;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
-
-/**
- * Created by 马小布 on 2017/4/8.
- */
 
 public class HomeFrgHotBrandAdapter extends RecyclerView.Adapter {
 
@@ -33,6 +31,8 @@ public class HomeFrgHotBrandAdapter extends RecyclerView.Adapter {
     public HomeFrgHotBrandAdapter(Activity activity, List<CartGethotbrandBean.DataBean>  data) {
         mInflater = LayoutInflater.from(activity);
         mActivity = activity;
+        if (null==data)
+            data = new ArrayList<>();
         mData=data;
     }
 
@@ -45,13 +45,17 @@ public class HomeFrgHotBrandAdapter extends RecyclerView.Adapter {
     @Override
     public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
         MyViewHolder viewHolder= (MyViewHolder) holder;
-        CartGethotbrandBean.DataBean dataBean = mData.get(position);
+        final CartGethotbrandBean.DataBean dataBean = mData.get(position);
         viewHolder.mTvBrand.setText(dataBean.getName());
         Log.d("HomeFrgHotBrandAdapter", dataBean.getLogo());
         Glide.with(mActivity).load(dataBean.getLogo()).into(viewHolder.mIvBrand);
-
-
-
+        viewHolder.mContainer.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(mActivity, "dataBean.getId():"
+                        + dataBean.getId(), Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 
     @Override
@@ -64,6 +68,8 @@ public class HomeFrgHotBrandAdapter extends RecyclerView.Adapter {
         ImageView mIvBrand;
         @Bind(R.id.tv_brand)
         TextView mTvBrand;
+        @Bind(R.id.container)
+        LinearLayout mContainer;
 
         public MyViewHolder(View itemView) {
             super(itemView);

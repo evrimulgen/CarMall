@@ -49,10 +49,9 @@ public class HomeActivity extends BaseAty {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        Log.d("HomeActivity", "create");
+//        Log.d("HomeActivity", "create");
         setContentView(R.layout.activity_home);
         ButterKnife.bind(this);
-
 
         List<TabViewChild> tabViewChildList = new ArrayList<>();
         TabViewChild tabViewChild01 = new TabViewChild(R.drawable.btn_home_home, R.drawable.btn_home_home_unsel, "首页", HomeFragment.newInstance());
@@ -79,50 +78,50 @@ public class HomeActivity extends BaseAty {
     @Override
     protected void onRestart() {
         super.onRestart();
-        Log.d("HomeActivity", "restart");
+//        Log.d("HomeActivity", "restart");
     }
 
     @Override
     protected void onStart() {
         super.onStart();
-        Log.d("HomeActivity", "start");
+//        Log.d("HomeActivity", "start");
     }
 
     @Override
     protected void onResume() {
         super.onResume();
-        Log.d("HomeActivity", "resume");
+//        Log.d("HomeActivity", "resume");
     }
 
     @Override
     protected void onPause() {
         super.onPause();
-        Log.d("HomeActivity", "pause");
+//        Log.d("HomeActivity", "pause");
     }
 
     @Override
     protected void onStop() {
         super.onStop();
-        Log.d("HomeActivity", "stop");
+//        Log.d("HomeActivity", "stop");
     }
 
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        Log.d("HomeActivity", "destroy");
+//        Log.d("HomeActivity", "destroy");
         ButterKnife.unbind(this);
     }
 
     @Override
     public void onSaveInstanceState(Bundle outState, PersistableBundle outPersistentState) {
         super.onSaveInstanceState(outState, outPersistentState);
-        Log.d("HomeActivity", "onSaveInstanceState2");
+//        Log.d("HomeActivity", "onSaveInstanceState2");
     }
 
     @Override
     protected void onSaveInstanceState(Bundle outState) {
 //        super.onSaveInstanceState(outState);
-        Log.d("HomeActivity", "onSaveInstanceState");
+//        Log.d("HomeActivity", "onSaveInstanceState");
     }
 
     @Override

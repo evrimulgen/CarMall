@@ -23,8 +23,6 @@ import butterknife.Bind;
 import butterknife.ButterKnife;
 
 public class InformationFragment extends BaseFrg {
-
-
     @Bind(R.id.tv_location)
     TextView mTvLocation;
     @Bind(R.id.ly_location)

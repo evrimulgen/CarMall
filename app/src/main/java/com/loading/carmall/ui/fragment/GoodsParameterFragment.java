@@ -36,11 +36,11 @@ import okhttp3.Request;
 public class GoodsParameterFragment extends LazyBaseFragment implements SwipeRefreshLayout.OnRefreshListener {
     @Bind(R.id.recycler_view)
     RecyclerView mRecyclerView;
-    GoodsParameterAdapter adapter;
-    ArrayList<MultiItemEntity> list;
     @Bind(R.id.swipe_refresh_layout)
     SwipeRefreshLayout mSwipeRefreshLayout;
 
+    ArrayList<MultiItemEntity> list;
+    GoodsParameterAdapter adapter;
     public static GoodsParameterFragment newInstance(String id) {
         Bundle args = new Bundle();
         args.putString("id", id);

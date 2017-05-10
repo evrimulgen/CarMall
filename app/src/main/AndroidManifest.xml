@@ -33,6 +33,8 @@
     <!-- 相机权限 -->
     <uses-permission android:name="android.permission.CAMERA"/>
     <uses-permission android:name="android.permission.WRITE_SETTINGS"/>
+    <!-- 震动 -->
+    <uses-permission android:name="android.permission.VIBRATE"/>
 
     <application
         android:name=".App"
@@ -144,6 +146,16 @@
             android:name=".ui.activity.SearchActivity"
             android:windowSoftInputMode="adjustPan"/>
         <activity android:name=".ui.activity.GroupBuyActivity">
+        </activity>
+        <activity android:name=".ui.activity.FilterResultsActivity">
+        </activity>
+        <activity android:name=".ui.activity.SecondHandActivity">
+        </activity>
+        <activity android:name=".ui.activity.SecondHandSaleActivity">
+        </activity>
+        <activity android:name=".ui.activity.SecondHandBuyActivity">
+        </activity>
+        <activity android:name=".ui.activity.SellRecordActivity">
         </activity>
     </application>
 

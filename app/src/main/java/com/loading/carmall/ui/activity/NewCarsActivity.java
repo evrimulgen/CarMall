@@ -1,40 +1,29 @@
 package com.loading.carmall.ui.activity;
 
-import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
-import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.alibaba.android.vlayout.DelegateAdapter;
-import com.alibaba.android.vlayout.LayoutHelper;
-import com.alibaba.android.vlayout.VirtualLayoutManager;
 import com.bumptech.glide.Glide;
 import com.google.gson.Gson;
 import com.loading.carmall.App;
 import com.loading.carmall.R;
 import com.loading.carmall.base.BaseAty;
-import com.loading.carmall.bean.CartGethotbrandBean;
 import com.loading.carmall.bean.CartNewcartBean;
 import com.loading.carmall.common.Contstant;
 import com.loading.carmall.common.UrlPath;
 import com.loading.carmall.ui.weiget.reacyclerviewhelper.BaseQuickAdapter;
 import com.loading.carmall.ui.weiget.reacyclerviewhelper.BaseViewHolder;
-import com.loading.carmall.utils.ConvertUtils;
 import com.loading.carmall.utils.MqlUtils;
-import com.loading.carmall.utils.ScreenUtils;
 import com.loading.carmall.utils.okhttp.OkHttpUtils;
 import com.loading.carmall.utils.okhttp.callback.MxbStringCallback;
 
@@ -45,7 +34,8 @@ import butterknife.ButterKnife;
 import okhttp3.Call;
 import okhttp3.Request;
 
-public class NewCarsActivity extends BaseAty implements SwipeRefreshLayout.OnRefreshListener, BaseQuickAdapter.RequestLoadMoreListener {
+public class NewCarsActivity extends BaseAty implements
+        SwipeRefreshLayout.OnRefreshListener, BaseQuickAdapter.RequestLoadMoreListener {
 
     @Bind(R.id.tv_title_common)
     TextView mTvTitleCommon;
@@ -88,7 +78,8 @@ public class NewCarsActivity extends BaseAty implements SwipeRefreshLayout.OnRef
         mSwipeRefreshLayout.setOnRefreshListener(this);
         mSwipeRefreshLayout.setColorSchemeColors(Color.rgb(47, 223, 189));
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
-        mAdapter = new BaseQuickAdapter<List<CartNewcartBean.DataBean>, BaseViewHolder>(R.layout.item_new_cars_aty, mDatas) {
+        mAdapter = new BaseQuickAdapter<List<CartNewcartBean.DataBean>, BaseViewHolder>
+                (R.layout.item_new_cars_aty, mDatas) {
             @Override
             protected void convert(BaseViewHolder helper, final List<CartNewcartBean.DataBean> item) {
                 if (item.size() >= 1) {

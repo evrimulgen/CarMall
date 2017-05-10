@@ -4,17 +4,16 @@ import android.support.v4.util.SparseArrayCompat;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
+import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 
 /**
  * 介绍：一个给RecyclerView添加HeaderView FooterView的装饰Adapter类
  * 重点哦~ RecyclerView的HeaderView将可以被系统回收，不像老版的HeaderView是一个强引用在内存里
- * 作者：zhangxutong
- * 邮箱：zhangxutong@imcoming.com
- * 时间： 2016/8/2.
  */
-public abstract class HeaderRecyclerAndFooterWrapperAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
+public abstract class HeaderRecyclerAndFooterWrapperAdapter
+        extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     private static final int BASE_ITEM_TYPE_HEADER = 1000000;//headerview的viewtype基准值
     private static final int BASE_ITEM_TYPE_FOOTER = 2000000;//footerView的ViewType基准值
 
@@ -69,6 +68,7 @@ public abstract class HeaderRecyclerAndFooterWrapperAdapter extends RecyclerView
      * @param data     headerView 的data(可能多种不同类型的header 只能用Object了)
      */
     public void addHeaderView(int layoutId, Object data) {
+
         //mHeaderViews.put(mHeaderViews.size() + BASE_ITEM_TYPE_HEADER, v);
         SparseArrayCompat headerContainer = new SparseArrayCompat();
         headerContainer.put(layoutId, data);
@@ -174,7 +174,7 @@ public abstract class HeaderRecyclerAndFooterWrapperAdapter extends RecyclerView
         if (isHeaderViewPos(position)) {
             int layoutId = mHeaderDatas.get(getItemViewType(position)).keyAt(0);
 //            onBindHeaderHolder((ViewHolder) holder, position, layoutId, mHeaderDatas.get(getItemViewType(position)).get(layoutId));
-            onBindHeaderHolder((ViewHolder) holder, position, layoutId, mHeaderDatas.get(position));
+            onBindHeaderHolder((ViewHolder) holder, position, layoutId, mHeaderDatas.valueAt(position).get(layoutId));
             return;
         } else if (isFooterViewPos(position)) {
             return;

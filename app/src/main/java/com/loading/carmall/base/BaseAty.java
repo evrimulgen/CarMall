@@ -36,7 +36,8 @@ import com.loading.carmall.App;
  *                    神兽保佑
  *                  代码无BUG!
  */
-public abstract class BaseAty extends AppCompatActivity {
+public abstract class BaseAty extends LifeCityBaseAty {
+
     public AppCompatActivity mActivity;
 
     protected void onCreate(Bundle savedInstanceState) {

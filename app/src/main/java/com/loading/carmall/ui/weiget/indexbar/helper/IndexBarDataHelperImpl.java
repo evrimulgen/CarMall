@@ -25,7 +25,6 @@ public class IndexBarDataHelperImpl implements IIndexBarDataHelper {
      * 如果需要，
      * 字符->拼音，
      *
-     * @param datas
      */
     @Override
     public IIndexBarDataHelper convert(List<? extends BaseIndexPinyinBean> datas) {

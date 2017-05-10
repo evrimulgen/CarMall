@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.loading.carmall.R;
+import com.loading.carmall.bean.SearchAtyHotBean;
 
 import java.util.List;
 
@@ -27,10 +28,10 @@ public class SearchHotAdapter extends RecyclerView.Adapter {
     }
 
     private Context mContext;
-    private List<String> mData;
+    private List<SearchAtyHotBean.DataBean> mData;
     private SearchPageCar mSearchPageCar;
 
-    public SearchHotAdapter(Context context, List<String> mData, SearchPageCar searchPageCar) {
+    public SearchHotAdapter(Context context, List<SearchAtyHotBean.DataBean> mData, SearchPageCar searchPageCar) {
         mContext = context;
         this.mData = mData;
         mSearchPageCar=searchPageCar;
@@ -45,7 +46,7 @@ public class SearchHotAdapter extends RecyclerView.Adapter {
     @Override
     public void onBindViewHolder(RecyclerView.ViewHolder holder, final int position) {
         final MyViewHolder viewHolder = (MyViewHolder) holder;
-        viewHolder.mTextView.setText(mData.get(position));
+        viewHolder.mTextView.setText(mData.get(position).getKeyword());
         viewHolder.mTextView.setOnClickListener(mSearchPageCar.TextViewItemListener );
 
 

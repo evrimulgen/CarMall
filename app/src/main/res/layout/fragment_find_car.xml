@@ -1,10 +1,9 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              xmlns:app="http://schemas.android.com/apk/res-auto"
-              xmlns:tools="http://schemas.android.com/tools"
-              android:layout_width="match_parent"
-              android:layout_height="match_parent"
-              android:orientation="vertical"
-              tools:context="com.loading.carmall.ui.fragment.FindCarFragment">
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+             xmlns:app="http://schemas.android.com/apk/res-auto"
+             xmlns:tools="http://schemas.android.com/tools"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             tools:context="com.loading.carmall.ui.fragment.FindCarFragment">
 
     <!--bar-->
     <FrameLayout
@@ -13,7 +12,7 @@
         android:layout_height="48dp"
         android:background="@color/backgroundGray"
         android:orientation="horizontal"
-        app:popupTheme="@style/AppTheme.PopupOverlay"
+        android:popupTheme="@style/AppTheme.PopupOverlay"
         >
 
         <ImageView
@@ -47,7 +46,9 @@
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:layout_marginBottom="50dp"
+        android:layout_marginTop="48dp">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -93,11 +94,14 @@
             </FrameLayout>
 
             <!--品牌-->
-            <android.support.v7.widget.RecyclerView
+            <com.loading.carmall.ui.weiget.MultiChoiceRecyclerView.MultiChoiceRecyclerView
                 android:id="@+id/rv_brand"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@color/white"/>
+                android:padding="16dp"
+                app:gravity="center"
+                app:max_select="-1"
+                />
 
             <!--价格-->
             <FrameLayout
@@ -129,17 +133,163 @@
                 android:id="@+id/range_slider"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
-                android:paddingLeft="@dimen/sz_12"
+                android:layout_marginEnd="10dp"
 
-                android:layout_marginRight="20dp"
-                android:paddingRight="10dp"
+                android:layout_marginStart="10dp"
+                android:paddingLeft="@dimen/sz_12"
+                android:paddingRight="@dimen/sz_12"
                 app:drawThumbsApart="true"
                 app:range1="@drawable/multislider_track_mtrl_alpha"
                 app:stepsThumbsApart="1"
                 app:thumbNumber="2"
-
                 />
+            <!--级别-->
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:background="@color/backgroundGray">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="@dimen/sz_12"
+                    android:text="级别"
+                    android:textColor="@color/colorTextHint"
+                    android:textSize="16sp"/>
+            </FrameLayout>
+
+            <com.loading.carmall.ui.weiget.MultiChoiceRecyclerView.MultiChoiceRecyclerView
+                android:id="@+id/rv_level"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+            <!--国别-->
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:background="@color/backgroundGray">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="@dimen/sz_12"
+                    android:text="国别"
+                    android:textColor="@color/colorTextHint"
+                    android:textSize="16sp"/>
+            </FrameLayout>
+
+            <com.loading.carmall.ui.weiget.MultiChoiceRecyclerView.MultiChoiceRecyclerView
+                android:id="@+id/rv_country"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <!--变速箱-->
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:background="@color/backgroundGray">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="@dimen/sz_12"
+                    android:text="变速箱"
+                    android:textColor="@color/colorTextHint"
+                    android:textSize="16sp"/>
+            </FrameLayout>
+
+            <com.loading.carmall.ui.weiget.MultiChoiceRecyclerView.MultiChoiceRecyclerView
+                android:id="@+id/rv_gearbox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <!--能源-->
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:background="@color/backgroundGray">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="@dimen/sz_12"
+                    android:text="能源"
+                    android:textColor="@color/colorTextHint"
+                    android:textSize="16sp"/>
+            </FrameLayout>
+
+            <com.loading.carmall.ui.weiget.MultiChoiceRecyclerView.MultiChoiceRecyclerView
+                android:id="@+id/rv_energy"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <!--排量-->
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:background="@color/backgroundGray">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="@dimen/sz_12"
+                    android:text="排量"
+                    android:textColor="@color/colorTextHint"
+                    android:textSize="16sp"/>
+            </FrameLayout>
+
+            <com.loading.carmall.ui.weiget.MultiChoiceRecyclerView.MultiChoiceRecyclerView
+                android:id="@+id/rv_displacement"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <!--座位数-->
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:background="@color/backgroundGray">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="@dimen/sz_12"
+                    android:text="座位数"
+                    android:textColor="@color/colorTextHint"
+                    android:textSize="16sp"/>
+            </FrameLayout>
+
+            <com.loading.carmall.ui.weiget.MultiChoiceRecyclerView.MultiChoiceRecyclerView
+                android:id="@+id/rv_seat"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
         </LinearLayout>
     </ScrollView>
 
-</LinearLayout>
+    <RelativeLayout
+        android:id="@+id/commit"
+        android:layout_width="match_parent"
+        android:background="@color/backgroundOrange"
+        android:layout_gravity="bottom"
+        android:layout_marginStart="@dimen/sz_12"
+        android:layout_marginEnd="@dimen/sz_12"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
+        android:layout_height="40dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="共200个车系1000个车型"
+            android:textSize="16sp"
+            android:textColor="@color/colorTextSecondary"
+            android:layout_marginLeft="@dimen/sz_12"
+            android:layout_marginEnd="@dimen/sz_12"
+            android:layout_centerInParent="true"/>
+    </RelativeLayout>
+
+
+</FrameLayout>

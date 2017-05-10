@@ -1,6 +1,5 @@
 package com.loading.carmall.ui.weiget.searchpage;
 
-import android.content.Context;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -11,29 +10,21 @@ import com.loading.carmall.R;
 
 import java.util.List;
 
-/**
- * Created by 马小布 on 2016/8/31.
- * 俱乐部列表
- */
-public class SearchHistoryAdapter extends RecyclerView.Adapter {
+class SearchHistoryAdapter extends RecyclerView.Adapter {
     public interface OnItemClickListener {
         void onItemClick(View view, String tarid, int position);
     }
 
-    public OnItemClickListener mListener;
+    private OnItemClickListener mListener;
 
     public void setOnItemClickListener(OnItemClickListener listener) {
         mListener = listener;
     }
 
-    private Context mContext;
     private List<String> mData;
-    private SearchPageCar mSearchPageCar;
 
-    public SearchHistoryAdapter(Context context, List<String> mData, SearchPageCar searchPageCar) {
-        mContext = context;
+    SearchHistoryAdapter(List<String> mData) {
         this.mData = mData;
-        mSearchPageCar=searchPageCar;
     }
 
     @Override
@@ -43,20 +34,17 @@ public class SearchHistoryAdapter extends RecyclerView.Adapter {
     }
 
     @Override
-    public void onBindViewHolder(RecyclerView.ViewHolder holder, final int position) {
+    public void onBindViewHolder(RecyclerView.ViewHolder holder,  int position) {
         final MyViewHolder viewHolder = (MyViewHolder) holder;
         viewHolder.mTextView.setText(mData.get(position));
         viewHolder.mTextView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if (null != mListener) {
-                    mListener.onItemClick(viewHolder.mTextView,"test",position);
+                    mListener.onItemClick(viewHolder.mTextView,"test",viewHolder.getAdapterPosition());
                 }
             }
         });
-
-
-
     }
 
     @Override

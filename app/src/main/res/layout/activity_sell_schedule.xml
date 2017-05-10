@@ -1,10 +1,53 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
-    android:orientation="vertical"
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context="com.loading.carmall.ui.activity.SellScheduleActivity">
-<include layout="@layout/common_title"/>
+
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/f9f9f9"
+        android:theme="@style/AppTheme.AppBarOverlay"
+        app:elevation="111dp"
+        >
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar_common"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:background="@color/colorPrimary"
+            app:collapseIcon="@drawable/ic_navigation_back"
+            app:navigationIcon="@drawable/ic_navigation_back"
+            app:popupTheme="@style/AppTheme.PopupOverlay"
+
+            >
+
+            <TextView
+                android:id="@+id/tv_title_common"
+                style="@style/TextAppearance.Widget.AppCompat.Toolbar.Title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="@color/f9f9f9"
+                android:textColor="@color/colorTextPrimary"/>
+            <ImageView
+                android:layout_width="wrap_content"
+                android:src="@drawable/ic_record"
+                android:layout_gravity="end|center_vertical"
+                android:layout_marginEnd="20dp"
+                android:id="@+id/iv_record"
+                android:layout_height="30dp"/>
+        </android.support.v7.widget.Toolbar>
+    </android.support.design.widget.AppBarLayout>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@id/recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"/>
 </LinearLayout>

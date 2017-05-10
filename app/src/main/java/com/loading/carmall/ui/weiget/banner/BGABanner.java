@@ -368,7 +368,9 @@ public class BGABanner extends RelativeLayout implements BGAViewPager.AutoPlayDe
      * @param models 每一页的数据模型集合
      * @param tips   每一页的提示文案集合
      */
-    public void setData(List<? extends Object> models, List<String> tips) {
+    public void setData(List<?> models, List<String> tips) {
+        if (null==models)
+            models = new ArrayList<>();
         setData( R.layout.bga_banner_item_image, models, tips);
     }
 

@@ -6,6 +6,5 @@
         >
 
     </item>
-    <item
-          android:drawable="@drawable/normal_bg"></item>
+    <item android:drawable="@drawable/normal_bg"/>
 </selector>
