@@ -1,5 +1,7 @@
 package com.loading.carmall.common;
 
+import com.loading.carmall.R;
+
 /**
  * Created by 马小布 on 2017/4/19.
  */
@@ -70,6 +72,15 @@ public class Contstant {
      * 首页搜索结果接口
      */
     public static final String ARTICLE_SEARCH = "Article-search";
+    /**
+     * 寻车
+     *  Cart-find_cart
+     */
+    public static final String CART_FIND_CART = "Cart-find_cart";
+    /**
+     * 寻车列表
+     */
+    public static final String CART_FIND_DETAIL = "Cart-find_detail";
 
 
     public static final String SEARCH_HISTORY = "search_history";
@@ -78,4 +89,23 @@ public class Contstant {
     public static final String USE_NICKNAME = "use_nickname";
 
 
+    public static final int[] LEVE_LICONS = {R.drawable.car0,R.drawable.car1,R.drawable.car2,R.drawable.car3,
+            R.drawable.car4,R.drawable.car5,R.drawable.car6,R.drawable.car7,R.drawable.car8,
+            R.drawable.car9, R.drawable.car10,R.drawable.car11,R.drawable.car12};
+    public static final String[] LEVEL_TITLES = {"微型车","小型车","紧凑型车","中型车","中大型车","大型车","轻客"
+            ,"微面","SUV","微卡","皮卡","跑车","MPV车型"};
+    public static final String[] LEVEL_COUNTRIES = {"中国","德国","美国","日本","法国","韩国","英国"
+            ,"其他"};
+    public static final String[] LEVEL_GEARBOX = {"手动","自动"};
+    public static final String[] LEVEL_ENERGY = {"汽油","柴油","油电混合","纯电动","插电式混合","增程式"};
+    public static final String[] LEVEL_DISPLACEMENT = {"1.0以下","1.1—1.6L","1.7—2.0L","2.1—2.5L",
+            "2.6—3.0L","3.1—4.0","4.0以上"};
+    public static final String[] LEVEL_SEATS= {"2座","4座","5座","6座","7座","7座以上"};
+    public static final String[] LEVEL_STRUCTURES = {"两厢", "三厢", "掀背", "旅行版", "硬顶敞篷车", "软顶敞篷车", "硬顶跑车", "客车", "货车"};
+    public static final String[] LEVEL_COMPANIES = {"自主", "合资", "进口"};
+    public static final String[] LEVEL_AIRS = {"自然吸气", "涡轮增压", "机械增压"};
+    public static final String[] LEVEL_DRIVES = {"前驱", "后驱", "四驱"};
+    public static final String[] LEVEL_SETTINGS = {"全景天窗", "电动天窗", "电动调节座椅", "车身ESP", "氙气大灯", "GPS导航", "定速巡航", "真皮座椅", "倒车雷达", "全自动空调", "多功能方向盘", "LED大灯", "倒车影像", "无钥匙启动", "座椅加热", "日间行车灯", "自动泊车", "蓝牙/车载电话"};
+    public static final String[] LEVEL_AGES = {"1年", "2年", "3年", "3-5年", "5-8年", "8年以上"};
+    public static final String[] LEVEL_DISTANCE = {"1万公里内", "2万公里内", "3万公里内", "5万公里内", "10万公里内" };
 }

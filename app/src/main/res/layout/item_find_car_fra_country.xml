@@ -3,16 +3,19 @@
              android:id="@id/container"
              android:layout_width="match_parent"
              android:layout_height="wrap_content"
-             android:layout_margin="10dp"
+             android:layout_marginStart="10dp"
+             android:layout_marginEnd="10dp"
+             android:paddingTop="10dp"
              android:orientation="vertical">
 
     <TextView
         android:id="@id/text_view"
-        android:layout_width="wrap_content"
+        android:padding="4dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginTop="3dp"
+        android:gravity="center"
         android:text="菲力宾"
-        android:textColor="@color/colorTextPrimary"
-        android:textSize="18sp"/>
+        android:textColor="@color/colorTextSecondary"
+        android:textSize="16sp"/>
 </FrameLayout>

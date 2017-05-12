@@ -1,5 +1,6 @@
 package com.loading.carmall.ui.activity;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.widget.SwipeRefreshLayout;
@@ -126,12 +127,13 @@ public class GroupBuyActivity extends BaseAty implements SwipeRefreshLayout.OnRe
         mAdapter.openLoadAnimation(BaseQuickAdapter.ALPHAIN);
 //        pullToRefreshAdapter.setAutoLoadMoreSize(3);
         mRecyclerView.setAdapter(mAdapter);
-      int  mCurrentCounter = mAdapter.getData().size();
+//      int  mCurrentCounter = mAdapter.getData().size();
 
         mRecyclerView.addOnItemTouchListener(new OnItemClickListener() {
             @Override
             public void onSimpleItemClick(final BaseQuickAdapter adapter, final View view, final int position) {
-                Toast.makeText(mActivity, Integer.toString(position), Toast.LENGTH_LONG).show();
+//                Toast.makeText(mActivity, Integer.toString(position), Toast.LENGTH_LONG).show();
+                startActivity(new Intent(mActivity,GroupDetailActivity.class));
             }
         });
 

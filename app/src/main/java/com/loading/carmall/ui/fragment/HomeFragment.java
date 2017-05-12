@@ -39,9 +39,11 @@ import com.loading.carmall.bean.ShabiBean;
 import com.loading.carmall.common.Contstant;
 import com.loading.carmall.common.UrlPath;
 import com.loading.carmall.mock.HeaderRecyclerAndFooterWrapperAdapter;
-import com.loading.carmall.mock.HomeFrgBodyAdapter;
+import com.loading.carmall.adapter.HomeFrgBodyAdapter;
 import com.loading.carmall.mock.ViewHolder;
 import com.loading.carmall.service.LocationService;
+import com.loading.carmall.ui.activity.CustomActivity;
+import com.loading.carmall.ui.activity.DiscountedActivity;
 import com.loading.carmall.ui.activity.GoodsDetailActivity;
 import com.loading.carmall.ui.activity.GroupBuyActivity;
 import com.loading.carmall.ui.activity.LocationSelectedActivity;
@@ -73,7 +75,8 @@ import butterknife.OnClick;
 import okhttp3.Call;
 import okhttp3.Request;
 
-public class HomeFragment extends BaseFrg implements View.OnClickListener, SwipeRefreshLayout.OnRefreshListener {
+public class HomeFragment extends BaseFrg implements View.OnClickListener,
+        SwipeRefreshLayout.OnRefreshListener {
     @Bind(R.id.recycler_view)
     RecyclerView mRecyclerView;
     @Bind(R.id.indexBar)
@@ -227,7 +230,7 @@ public class HomeFragment extends BaseFrg implements View.OnClickListener, Swipe
                                         ArticleGetheadlinesBean.DataBean>() {
                                     @Override
                                     public void onItemClickListener(MarqueeFactory.ViewHolder<TextView, ArticleGetheadlinesBean.DataBean> holder) {
-                                        Toast.makeText(getActivity(), holder.data.getId()+"", Toast.LENGTH_SHORT).show();
+                                        Toast.makeText(getActivity(), holder.data.getId() + "", Toast.LENGTH_SHORT).show();
                                     }
                                 });
                                 marqueeFactory.setData(headerBean.getHeadLinesDatas());
@@ -247,7 +250,7 @@ public class HomeFragment extends BaseFrg implements View.OnClickListener, Swipe
                             mLy4sShop.setOnClickListener(new View.OnClickListener() {
                                 @Override
                                 public void onClick(View v) {
-                                    startActivity(new Intent(getActivity(), GoodsDetailActivity.class));
+                                    startActivity(new Intent(getActivity(), DiscountedActivity.class));
                                 }
                             });
                             //二手车
@@ -267,6 +270,14 @@ public class HomeFragment extends BaseFrg implements View.OnClickListener, Swipe
                                 }
                             });
 
+                            LinearLayout mlyCustom = holder.getView(R.id.ly_custom);
+                            mlyCustom.setOnClickListener(new View.OnClickListener() {
+                                @Override
+                                public void onClick(View v) {
+                                    startActivity(new Intent(getActivity(), CustomActivity.class));
+                                }
+                            });
+
                         }
 
                         break;
@@ -275,11 +286,12 @@ public class HomeFragment extends BaseFrg implements View.OnClickListener, Swipe
                 }
             }
         };
+
         mAdapter.addHeaderView(R.layout.item_home_header, mHeaderDatas.get(0));
         mRecyclerView.setAdapter(mAdapter);
         mRecyclerView.addItemDecoration(mDecoration = new HomeSuspensionDecoration(getActivity(), mDatas)
                 .setmTitleHeight((int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 26, getResources().getDisplayMetrics()))//设置abc标题高度
-                .setColorTitleBg(getResources().getColor(R.color.backgroundGray))
+                .setColorTitleBg(ContextCompat.getColor(getActivity(), R.color.backgroundGray))
                 .setTitleFontSize((int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_SP, 16, getResources().getDisplayMetrics()))
                 .setHeaderViewCount(mAdapter.getHeaderViewCount() - mHeaderDatas.size()));
         //使用indexBar
@@ -287,8 +299,6 @@ public class HomeFragment extends BaseFrg implements View.OnClickListener, Swipe
                 .setNeedRealIndex(true)//设置需要真实的索引
                 .setmLayoutManager(mLayoutManager)//设置RecyclerView的LayoutManager
                 .setHeaderViewCount(mAdapter.getHeaderViewCount() - mHeaderDatas.size());
-
-//        initDatas(getResources().getStringArray(R.array.provinces));
         mRecyclerView.addOnScrollListener(new RecyclerView.OnScrollListener() {
             @Override
             public void onScrolled(RecyclerView recyclerView, int dx, int dy) {
@@ -300,7 +310,6 @@ public class HomeFragment extends BaseFrg implements View.OnClickListener, Swipe
                 }
             }
         });
-
 
         //处理定位
         locationService = App.getInstance().locationService;

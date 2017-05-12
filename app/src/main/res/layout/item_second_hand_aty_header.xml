@@ -72,7 +72,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="6dp"
-                android:text="买车"
+                android:text="卖车"
                 android:textColor="@color/colorTextOrange"
                 android:textSize="18sp"/>
 
@@ -84,7 +84,7 @@
                 android:layout_marginEnd="6dp"
 
                 android:gravity="end"
-                android:text="多种车源"
+                android:text="快速出售"
                 android:textColor="@color/colorTextPrimary"
                 android:textSize="16sp"/>
         </LinearLayout>

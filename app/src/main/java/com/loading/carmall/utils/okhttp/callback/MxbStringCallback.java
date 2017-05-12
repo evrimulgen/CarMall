@@ -12,8 +12,10 @@ import org.json.JSONObject;
 
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
+import java.net.SocketTimeoutException;
 import java.net.URLDecoder;
 
+import okhttp3.Call;
 import okhttp3.Response;
 
 
@@ -67,38 +69,12 @@ public abstract class MxbStringCallback extends Callback<String> {
             Toast.makeText(App.getInstance(), "设备不支持后台订的解析编码格式", Toast.LENGTH_SHORT).show();
             e.printStackTrace();
         }
-
-
     }
+
 
     @Override
     public String parseNetworkResponse(Response response, int id) throws IOException {
         //  处理网络异常&code status   response.body().string()
-//        Log.d("MxbStringCallback", response.body().string());
-//        String json = null;
-//        try {
-//            JSONObject jsonObject = new JSONObject(response.body().string());
-//            boolean result = jsonObject.getBoolean("result");
-//            String message = jsonObject.getString("msg");
-//            String data = jsonObject.getString("data");
-//            if (result) {
-//                //成功
-//                String urlDecoder = URLDecoder.decode(data, "UTF-8").trim();
-//                byte[] decode = Base64.decode(urlDecoder.getBytes(), Base64.DEFAULT);
-//                json = new String(decode);
-//
-//            } else {
-//                onResultFalse(message);
-//                return null;
-//            }
-//        } catch (JSONException e) {
-//            e.printStackTrace();
-//            Toast.makeText(App.getInstance(), "返回的数据没有result或message字段", Toast.LENGTH_SHORT).show();
-//        } catch (UnsupportedEncodingException e) {
-//            //设备不支持解析编码
-//            Toast.makeText(App.getInstance(), "设备不支持后台订的解析编码格式", Toast.LENGTH_SHORT).show();
-//            e.printStackTrace();
-//        }
         return response.body().string();
 
     }

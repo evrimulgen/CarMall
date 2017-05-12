@@ -138,6 +138,7 @@ public class NewCarsActivity extends BaseAty implements
                     @Override
                     public void onAfter(int id) {
                         super.onAfter(id);
+                        if (null!=mSwipeRefreshLayout)
                         mSwipeRefreshLayout.setRefreshing(false);
                     }
 
@@ -154,7 +155,6 @@ public class NewCarsActivity extends BaseAty implements
 
                     @Override
                     public void onSuccess(String response, int id) {
-
                         Log.d("NewCarsActivity", "CART_NEWCART" + response);
                         Gson gson = new Gson();
                         List<CartNewcartBean.DataBean> beans = gson.fromJson(response, CartNewcartBean.class).getData();
@@ -164,6 +164,7 @@ public class NewCarsActivity extends BaseAty implements
 
                     @Override
                     public void onError(Call call, Exception e, int id) {
+                        Log.d("NewCarsActivity", e.toString());
                         Toast.makeText(mActivity, "接口：CART_NEWCART————服务器问题", Toast.LENGTH_SHORT).show();
                     }
                 });

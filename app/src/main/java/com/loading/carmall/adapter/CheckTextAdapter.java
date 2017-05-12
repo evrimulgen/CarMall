@@ -18,7 +18,6 @@
 package com.loading.carmall.adapter;
 
 import android.content.Context;
-import android.graphics.Color;
 import android.support.annotation.LayoutRes;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.RecyclerView;
@@ -26,25 +25,20 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.loading.carmall.R;
 import com.loading.carmall.ui.weiget.MultiChoiceRecyclerView.MultiChoiceAdapter;
 
-import java.util.ArrayList;
-
-import static com.loading.carmall.R.id.relativeLayout;
-
 
 public class CheckTextAdapter extends MultiChoiceAdapter<CheckTextAdapter.MySampleToolbarViewHolder> {
 
-    ArrayList<String> mList;
+    String[] mDatas;
     Context mContext;
     int mLayoutRes;
 
-    public CheckTextAdapter(ArrayList<String> stringList, Context context, @LayoutRes int layout) {
-        this.mList = stringList;
+    public CheckTextAdapter(String[] stringList, Context context, @LayoutRes int layout) {
+        this.mDatas = stringList;
         this.mContext = context;
         mLayoutRes=layout;
     }
@@ -59,7 +53,7 @@ public class CheckTextAdapter extends MultiChoiceAdapter<CheckTextAdapter.MySamp
     @Override
     public void onBindViewHolder(MySampleToolbarViewHolder holder, int position) {
         super.onBindViewHolder(holder, position);
-        holder.mTextView.setText(mList.get(position));
+        holder.mTextView.setText(mDatas[position]);
     }
 
 
@@ -72,17 +66,18 @@ public class CheckTextAdapter extends MultiChoiceAdapter<CheckTextAdapter.MySamp
         FrameLayout layout = (FrameLayout) view.findViewById(R.id.container);
 
         if (layout != null) {
+            TextView textView = (TextView) view.findViewById(R.id.text_view);
             if (state) {
-                layout.setForeground(mContext.getResources().getDrawable(R.drawable.shape_rectangle_orenge));
+                textView.setTextColor(ContextCompat.getColor(mContext,R.color.colorTextOrange));
             } else {
-                layout.setForeground(null);
+                textView.setTextColor(ContextCompat.getColor(mContext,R.color.colorTextSecondary));
             }
         }
     }
 
     @Override
     public int getItemCount() {
-        return mList.size();
+        return mDatas.length;
     }
 
     public class MySampleToolbarViewHolder extends RecyclerView.ViewHolder {

@@ -3,10 +3,8 @@ package com.loading.carmall.ui.activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.widget.SwipeRefreshLayout;
-import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,25 +13,16 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.loading.carmall.App;
 import com.loading.carmall.R;
-import com.loading.carmall.adapter.CheckImageAdapter;
-import com.loading.carmall.adapter.CheckTextAdapter;
 import com.loading.carmall.base.BaseAty;
 import com.loading.carmall.mock.newcars.DataServer;
 import com.loading.carmall.mock.newcars.Status;
-import com.loading.carmall.ui.weiget.InnerRecyclerView;
-import com.loading.carmall.ui.weiget.MultiChoiceRecyclerView.MultiChoiceRecyclerView;
-import com.loading.carmall.ui.weiget.MultiChoiceRecyclerView.listeners.MultiChoiceSelectionListener;
-import com.loading.carmall.ui.weiget.StateTextView;
 import com.loading.carmall.ui.weiget.flowlayout.FlowLayout;
 import com.loading.carmall.ui.weiget.flowlayout.TagAdapter;
 import com.loading.carmall.ui.weiget.flowlayout.TagFlowLayout;
 import com.loading.carmall.ui.weiget.reacyclerviewhelper.BaseQuickAdapter;
 import com.loading.carmall.ui.weiget.reacyclerviewhelper.BaseViewHolder;
 import com.loading.carmall.ui.weiget.reacyclerviewhelper.listener.OnItemClickListener;
-
-import java.util.ArrayList;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;

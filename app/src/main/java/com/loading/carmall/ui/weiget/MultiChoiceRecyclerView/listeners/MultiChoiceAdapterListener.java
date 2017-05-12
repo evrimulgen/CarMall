@@ -2,10 +2,6 @@ package com.loading.carmall.ui.weiget.MultiChoiceRecyclerView.listeners;
 
 import android.view.View;
 
-/**
- * Created by davidecirillo on 02/06/2016.
- */
-
 public interface MultiChoiceAdapterListener {
 
     void onSingleItemClickListener(View view, int position);

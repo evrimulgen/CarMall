@@ -10,6 +10,7 @@ import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.util.AttributeSet;
 import android.view.View;
+import android.view.ViewGroup;
 
 import com.loading.carmall.ui.weiget.MultiChoiceRecyclerView.listeners.MultiChoiceAdapterListener;
 import com.loading.carmall.ui.weiget.MultiChoiceRecyclerView.listeners.MultiChoiceSelectionListener;
@@ -320,5 +321,22 @@ public class MultiChoiceRecyclerView extends RecyclerView
         isToolbarMultiChoice = true;
     }
 
+
+
+    @Override
+    protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
+        int heightSpec;
+        if(getLayoutParams().height== ViewGroup.LayoutParams.WRAP_CONTENT)
+        {
+            heightSpec = MeasureSpec.makeMeasureSpec(
+                    Integer.MAX_VALUE >> 2, MeasureSpec.AT_MOST);
+            //Integer.MAX_VALUE >> 2 == 2的31次方-1 表示的int的最大值
+        }
+        else {
+            // Any other height should be respected as is.
+            heightSpec = heightMeasureSpec;
+        }
+        super.onMeasure(widthMeasureSpec, heightSpec);
+    }
 
 }

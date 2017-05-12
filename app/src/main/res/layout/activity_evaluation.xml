@@ -116,7 +116,7 @@
             <FrameLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/shape_rectangle_gray">
+                android:background="@drawable/shape_rectangle_gray_radius">
                 <EditText
                     android:layout_width="match_parent"
                     android:minHeight="100dp"

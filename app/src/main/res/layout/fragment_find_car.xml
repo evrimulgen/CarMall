@@ -20,7 +20,7 @@
             android:layout_width="16dp"
             android:layout_height="16dp"
             android:layout_gravity="center_vertical"
-            android:layout_marginLeft="@dimen/sz_12"
+            android:layout_marginStart="@dimen/sz_12"
             android:src="@drawable/ic_home_search"/>
 
         <TextView
@@ -42,6 +42,11 @@
             android:text="重置"
             android:textColor="@color/colorTextPrimary"
             android:textSize="16sp"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="@color/lineGray"/>
     </FrameLayout>
 
     <ScrollView
@@ -71,7 +76,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
-                    android:layout_marginLeft="@dimen/sz_12"
+                    android:layout_marginStart="@dimen/sz_12"
                     android:text="品牌"
                     android:textColor="@color/colorTextHint"
                     android:textSize="16sp"/>
@@ -96,6 +101,7 @@
             <!--品牌-->
             <com.loading.carmall.ui.weiget.MultiChoiceRecyclerView.MultiChoiceRecyclerView
                 android:id="@+id/rv_brand"
+                android:paddingBottom="10dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="16dp"
@@ -113,7 +119,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
-                    android:layout_marginLeft="@dimen/sz_12"
+                    android:layout_marginStart="@dimen/sz_12"
                     android:text="价格"
                     android:textColor="@color/colorTextHint"
                     android:textSize="16sp"/>
@@ -153,7 +159,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
-                    android:layout_marginLeft="@dimen/sz_12"
+                    android:layout_marginStart="@dimen/sz_12"
                     android:text="级别"
                     android:textColor="@color/colorTextHint"
                     android:textSize="16sp"/>
@@ -162,6 +168,7 @@
             <com.loading.carmall.ui.weiget.MultiChoiceRecyclerView.MultiChoiceRecyclerView
                 android:id="@+id/rv_level"
                 android:layout_width="match_parent"
+                android:paddingBottom="10dp"
                 android:layout_height="wrap_content"/>
             <!--国别-->
             <FrameLayout
@@ -173,7 +180,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
-                    android:layout_marginLeft="@dimen/sz_12"
+                    android:layout_marginStart="@dimen/sz_12"
                     android:text="国别"
                     android:textColor="@color/colorTextHint"
                     android:textSize="16sp"/>
@@ -181,6 +188,7 @@
 
             <com.loading.carmall.ui.weiget.MultiChoiceRecyclerView.MultiChoiceRecyclerView
                 android:id="@+id/rv_country"
+                android:paddingBottom="10dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>
 
@@ -194,7 +202,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
-                    android:layout_marginLeft="@dimen/sz_12"
+                    android:layout_marginStart="@dimen/sz_12"
                     android:text="变速箱"
                     android:textColor="@color/colorTextHint"
                     android:textSize="16sp"/>
@@ -202,6 +210,7 @@
 
             <com.loading.carmall.ui.weiget.MultiChoiceRecyclerView.MultiChoiceRecyclerView
                 android:id="@+id/rv_gearbox"
+                android:paddingBottom="10dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>
 
@@ -215,7 +224,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
-                    android:layout_marginLeft="@dimen/sz_12"
+                    android:layout_marginStart="@dimen/sz_12"
                     android:text="能源"
                     android:textColor="@color/colorTextHint"
                     android:textSize="16sp"/>
@@ -223,6 +232,7 @@
 
             <com.loading.carmall.ui.weiget.MultiChoiceRecyclerView.MultiChoiceRecyclerView
                 android:id="@+id/rv_energy"
+                android:paddingBottom="10dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>
 
@@ -236,7 +246,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
-                    android:layout_marginLeft="@dimen/sz_12"
+                    android:layout_marginStart="@dimen/sz_12"
                     android:text="排量"
                     android:textColor="@color/colorTextHint"
                     android:textSize="16sp"/>
@@ -244,6 +254,7 @@
 
             <com.loading.carmall.ui.weiget.MultiChoiceRecyclerView.MultiChoiceRecyclerView
                 android:id="@+id/rv_displacement"
+                android:paddingBottom="10dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>
 
@@ -257,7 +268,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
-                    android:layout_marginLeft="@dimen/sz_12"
+                    android:layout_marginStart="@dimen/sz_12"
                     android:text="座位数"
                     android:textColor="@color/colorTextHint"
                     android:textSize="16sp"/>
@@ -265,6 +276,115 @@
 
             <com.loading.carmall.ui.weiget.MultiChoiceRecyclerView.MultiChoiceRecyclerView
                 android:id="@+id/rv_seat"
+                android:paddingBottom="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <!--结构-->
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:background="@color/backgroundGray">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="@dimen/sz_12"
+                    android:text="结构"
+                    android:textColor="@color/colorTextHint"
+                    android:textSize="16sp"/>
+            </FrameLayout>
+
+            <com.loading.carmall.ui.weiget.MultiChoiceRecyclerView.MultiChoiceRecyclerView
+                android:id="@+id/rv_structure"
+                android:paddingBottom="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <!--生产厂商-->
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:background="@color/backgroundGray">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="@dimen/sz_12"
+                    android:text="生产厂商"
+                    android:textColor="@color/colorTextHint"
+                    android:textSize="16sp"/>
+            </FrameLayout>
+
+            <com.loading.carmall.ui.weiget.MultiChoiceRecyclerView.MultiChoiceRecyclerView
+                android:id="@+id/rv_company"
+                android:paddingBottom="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <!--进气形式-->
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:background="@color/backgroundGray">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="@dimen/sz_12"
+                    android:text="进气形式"
+                    android:textColor="@color/colorTextHint"
+                    android:textSize="16sp"/>
+            </FrameLayout>
+
+            <com.loading.carmall.ui.weiget.MultiChoiceRecyclerView.MultiChoiceRecyclerView
+                android:id="@+id/rv_air"
+                android:paddingBottom="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+            <!--驱动方式-->
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:background="@color/backgroundGray">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="@dimen/sz_12"
+                    android:text="驱动方式"
+                    android:textColor="@color/colorTextHint"
+                    android:textSize="16sp"/>
+            </FrameLayout>
+
+            <com.loading.carmall.ui.weiget.MultiChoiceRecyclerView.MultiChoiceRecyclerView
+                android:id="@+id/rv_drive"
+                android:paddingBottom="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+            <!--配置-->
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:background="@color/backgroundGray">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="@dimen/sz_12"
+                    android:text="配置"
+                    android:textColor="@color/colorTextHint"
+                    android:textSize="16sp"/>
+            </FrameLayout>
+
+            <com.loading.carmall.ui.weiget.MultiChoiceRecyclerView.MultiChoiceRecyclerView
+                android:paddingBottom="10dp"
+                android:id="@+id/rv_setting"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>
         </LinearLayout>
@@ -286,7 +406,7 @@
             android:text="共200个车系1000个车型"
             android:textSize="16sp"
             android:textColor="@color/colorTextSecondary"
-            android:layout_marginLeft="@dimen/sz_12"
+            android:layout_marginStart="@dimen/sz_12"
             android:layout_marginEnd="@dimen/sz_12"
             android:layout_centerInParent="true"/>
     </RelativeLayout>

@@ -2,10 +2,6 @@ package com.loading.carmall.bean;
 
 import java.util.List;
 
-/**
- * Created by 马小布 on 2017/5/5.
- */
-
 public class CartNewcartBean {
 
     /**
