@@ -63,7 +63,7 @@ public abstract class MxbStringCallback extends Callback<String> {
             }
         } catch (JSONException e) {
             e.printStackTrace();
-            Toast.makeText(App.getInstance(), "返回的数据没有result或message字段", Toast.LENGTH_SHORT).show();
+            Toast.makeText(App.getInstance(), "服务器有问题：返回的数据没有result或message字段", Toast.LENGTH_SHORT).show();
         } catch (UnsupportedEncodingException e) {
             //设备不支持解析编码
             Toast.makeText(App.getInstance(), "设备不支持后台订的解析编码格式", Toast.LENGTH_SHORT).show();

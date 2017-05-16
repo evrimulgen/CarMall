@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.widget.SwipeRefreshLayout;
+import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
@@ -174,43 +175,46 @@ public class DiscountedActivity extends BaseAty implements
             mFlSelect.setVisibility(View.VISIBLE);
             mRvSelect.setAnimation(AnimationUtils.loadAnimation(this, R.anim.dd_menu_up_in));
             mFlSelect.setAnimation(AnimationUtils.loadAnimation(this, R.anim.dd_mask_in));
-            mRvSelect.setLayoutManager(new LinearLayoutManager(mActivity));
             String[] menuTitles;
             if (menuType == MenuType.LEVEL) {
                 //级别
                 mMenuType = menuType;
                 setMenuBackgroud();
 //                menuIcons = new int[]{R.mipmap.icon_juli, R.mipmap.icon_haoping, R.mipmap.icon_redu, R.mipmap.icon_buxian};
-                menuTitles = new String[]{"默认排序", "价格从高到低", "价格从低到高", "最新发布", "最短里程", "车龄最短"};
+                menuTitles = new String[]{"不限","微型车","小型车","紧凑型车","中型车","中大型车","大型车","轻客"
+                        ,"微面","SUV","微卡","皮卡","跑车","MPV车型"};
+                mRvSelect.setLayoutManager(new GridLayoutManager(mActivity,4));
                 BaseQuickAdapter<String, BaseViewHolder> baseQuickAdapter
                         = new BaseQuickAdapter<String, BaseViewHolder>(
-                        R.layout.item_second_hand_aty_fliter, Arrays.asList(menuTitles)) {
+                        R.layout.item_discounted_level, Arrays.asList(menuTitles)) {
                     @Override
                     protected void convert(BaseViewHolder helper, String item) {
                         int position = helper.getAdapterPosition();
-                        TextView textView = helper.getView(R.id.text_view);
+                        StateTextView textView = helper.getView(R.id.text_view);
                         textView.setText(item);
                         if (position == mFilterType) {
-                            ImageView ivRight = helper.getView(R.id.iv_right);
-                            ivRight.setVisibility(View.VISIBLE);
+                            textView.setPressed(true);
                         }
                     }
                 };
-                baseQuickAdapter.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener<String>() {
+                baseQuickAdapter.setOnItemClickListener(
+                        new BaseQuickAdapter.OnItemClickListener<String>() {
                     @Override
-                    public void onItemClick(BaseQuickAdapter<String, ? extends BaseViewHolder> adapter
+                    public void onItemClick(BaseQuickAdapter<String,
+                            ? extends BaseViewHolder> adapter
                             , View view, int position) {
                         mFilterType = position;
                         switchMenu(MenuType.HIDE);
-
                     }
                 });
                 mRvSelect.setAdapter(baseQuickAdapter);
-            } else if (menuType == MenuType.PRICE) {//筛选
+            } else if (menuType == MenuType.PRICE) {
+                //价格
                 mMenuType = menuType;
                 setMenuBackgroud();
 //                menuIcons = new int[]{R.mipmap.icon_juli, R.mipmap.icon_haoping, R.mipmap.icon_redu, R.mipmap.icon_buxian};
                 menuTitles = new String[]{"默认排序", "价格从高到低", "价格从低到高", "最新发布", "最短里程", "车龄最短"};
+                mRvSelect.setLayoutManager(new LinearLayoutManager(mActivity));
                 BaseQuickAdapter<String, BaseViewHolder> baseQuickAdapter
                         = new BaseQuickAdapter<String, BaseViewHolder>(
                         R.layout.item_second_hand_aty_fliter, Arrays.asList(menuTitles)) {

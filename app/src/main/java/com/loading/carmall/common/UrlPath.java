@@ -123,4 +123,22 @@ public class UrlPath {
      * http://47.92.30.24:8080/api/cart/find_detail
      */
     public static final String CART_FIND_DETAIL = BASE_URL + "cart/find_detail";
+
+    /**
+     * 类型详情接口
+     * Cart-cart_type
+     */
+    public static final String CART_CART_TYPE = BASE_URL + "cart/cart_type";
+
+    /**
+     * 发布二手车接口
+     * Cartused-release
+     */
+    public static final String CARTUSED_RELEASE = BASE_URL + "cartused/release";
+
+    /**
+     * 用户协议
+     * User-protocol
+     */
+    public static final String USER_PROTOCOL = BASE_URL + "User/protocol";
 }

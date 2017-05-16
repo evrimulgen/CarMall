@@ -8,8 +8,11 @@
     <dimen name="sz_10">11.11dip</dimen>
     <dimen name="sz_12">13.33dip</dimen>
     <dimen name="sz_14">15.56dip</dimen>
+    <dimen name="sz_15">16.67dip</dimen>
     <dimen name="sz_16">17.78dip</dimen>
+    <dimen name="sz_17">18.89dip</dimen>
     <dimen name="sz_18">20.00dip</dimen>
+    <dimen name="sz_19">21.11dip</dimen>
     <dimen name="sz_20">22.22dip</dimen>
     <dimen name="sz_22">24.44dip</dimen>
     <dimen name="sz_24">26.67dip</dimen>

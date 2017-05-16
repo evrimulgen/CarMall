@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.loading.carmall.ui.activity.DiscountNoticeActivity">
+
+    <include layout="@layout/common_title"/>
+
+    <com.loading.carmall.ui.weiget.StateTextView
+        style="?android:attr/borderlessButtonStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clickable="false"
+        android:gravity="start|center_vertical"
+        android:lineSpacingMultiplier="1.2"
+        android:paddingEnd="@dimen/sz_32"
+        android:paddingStart="@dimen/sz_32"
+        android:text="我们将会将您的意向价位通知卖家,收到此意向价位后他会及时的联系您"
+        android:textColor="@color/colorTextSecondary"
+        android:textSize="@dimen/sz_16"
+        app:normalBackgroundColor="@color/eeeeee"
+        />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_marginStart="@dimen/sz_14"
+        android:layout_marginTop="@dimen/sz_16">
+
+        <ImageView
+            android:id="@id/image_view"
+            android:layout_width="110dp"
+            android:layout_height="80dp"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="8dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/test_43"/>
+
+        <TextView
+            android:id="@id/tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="24dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="@dimen/sz_4"
+            android:layout_toEndOf="@id/image_view"
+            android:maxLines="2"
+            android:text="@string/test_text"
+            android:textColor="@color/colorTextPrimary"
+            android:textSize="@dimen/sz_16"
+            />
+
+        <TextView
+            android:id="@id/tv_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_title"
+            android:layout_marginEnd="24dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="@dimen/sz_4"
+            android:layout_toEndOf="@id/image_view"
+            android:lines="1"
+            android:text="10万"
+            android:textColor="@color/colorTextOrange"
+            android:textSize="@dimen/sz_15"
+            />
+
+        <TextView
+            android:id="@id/tv_content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="@dimen/sz_4"
+            android:layout_marginEnd="24dp"
+            android:layout_marginStart="10dp"
+            android:layout_toEndOf="@id/image_view"
+            android:lines="1"
+            android:text="@string/test_text"
+            android:textColor="@color/colorTextHint"
+            android:textSize="@dimen/sz_14"
+            />
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:layout_marginTop="@dimen/sz_14"
+        android:background="@color/lineGray"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/sz_10"
+        android:layout_marginEnd="@dimen/sz_14"
+        android:layout_marginStart="@dimen/sz_14"
+        android:layout_marginTop="@dimen/sz_20"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginEnd="@dimen/sz_4"
+            android:text="降到低于"
+            android:textColor="@color/colorTextPrimary"
+            android:textSize="@dimen/sz_15"/>
+
+        <EditText
+            android:id="@+id/edit_text"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_marginEnd="@dimen/sz_6"
+            android:layout_marginStart="@dimen/sz_6"
+            android:layout_weight="1"
+            android:background="@drawable/shape_rectangle_gray_radius"
+            android:hint=""
+            android:padding="10dp"
+            android:textSize="16sp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginEnd="@dimen/sz_40"
+            android:layout_marginStart="@dimen/sz_4"
+            android:text="万时,通知我"
+            android:textColor="@color/colorTextPrimary"
+            android:textSize="@dimen/sz_15"/>
+    </LinearLayout>
+
+    <com.loading.carmall.ui.weiget.StateTextView
+        style="?android:attr/borderlessButtonStyle"
+        android:layout_width="match_parent"
+        android:layout_height="54dp"
+        android:layout_marginEnd="@dimen/sz_14"
+        android:layout_marginStart="@dimen/sz_14"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:text="降价后通知我"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        app:normalBackgroundColor="@color/backgroundOrange"
+        app:pressedBackgroundColor="@color/colorTextOrange"
+        app:radius="6dp"/>
+</LinearLayout>

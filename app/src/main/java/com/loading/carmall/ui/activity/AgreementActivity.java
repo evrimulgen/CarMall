@@ -3,13 +3,26 @@ package com.loading.carmall.ui.activity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.text.Html;
+import android.util.Log;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.google.gson.Gson;
+import com.loading.carmall.App;
 import com.loading.carmall.R;
 import com.loading.carmall.base.BaseAty;
+import com.loading.carmall.bean.ArticlegetbannnerBean;
+import com.loading.carmall.common.Contstant;
+import com.loading.carmall.common.UrlPath;
+import com.loading.carmall.utils.okhttp.OkHttpUtils;
+import com.loading.carmall.utils.okhttp.callback.MxbStringCallback;
+
+import java.util.List;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
+import okhttp3.Call;
+import okhttp3.Request;
 
 public class AgreementActivity extends BaseAty {
     String test = "<!DOCTYPE html>\n" +
@@ -124,6 +137,38 @@ public class AgreementActivity extends BaseAty {
 
     @Override
     public void initData() {
+        OkHttpUtils.post()
+                .tag(this)
+                .url(UrlPath.USER_PROTOCOL)
+                .params(null, Contstant.USER_PROTOCOL)
+                .build()
+                .execute(new MxbStringCallback() {
+                    @Override
+                    public void onBefore(Request request, int id) {
+                        super.onBefore(request, id);
+                    }
 
+                    @Override
+                    public void onNodata() {
+                        super.onNodata();
+                        Log.d("AgreementActivity", "USER_PROTOCOL接口没返数据");
+                    }
+
+                    @Override
+                    public void onResultFalse(String result) {
+                        Toast.makeText(App.getInstance(), result, Toast.LENGTH_SHORT).show();
+                    }
+
+                    @Override
+                    public void onSuccess(String response, int id) {
+                        Log.d("AgreementActivity", "USER_PROTOCOL:" + response);
+                        //{"data":[{"id":12,"title":"首页banner1","url":"","image":"http:\/\/47.92.30.24:8080\/uploads\/images\/20170509\/67773784644856781de7194b008cca10.jpg"},{"id":13,"title":"首页banner2","url":"","image":"http:\/\/47.92.30.24:8080\/uploads\/images\/20170509\/2f1026f4f7b02326645780815ef2b727.jpg"},{"id":14,"title":"首页banner3","url":"","image":"http:\/\/47.92.30.24:8080\/uploads\/images\/20170509\/178fcdf9cc476444a56f414d3c0d75b6.jpg"}]}
+                    }
+
+                    @Override
+                    public void onError(Call call, Exception e, int id) {
+                        Toast.makeText(mActivity, "接口：USER_PROTOCOL————服务器有问题", Toast.LENGTH_SHORT).show();
+                    }
+                });
     }
 }

@@ -6,9 +6,13 @@
     <dimen name="sz_9">8.00dip</dimen>
     <dimen name="sz_10">8.9dp</dimen>
     <dimen name="sz_12">10.7dp</dimen>
+    <dimen name="sz_13">11.6dp</dimen>
     <dimen name="sz_14">12.4dp</dimen>
+    <dimen name="sz_15">13.3dp</dimen>
     <dimen name="sz_16">14.2dp</dimen>
+    <dimen name="sz_17">15.1dp</dimen>
     <dimen name="sz_18">16.0dp</dimen>
+    <dimen name="sz_19">16.9dp</dimen>
     <dimen name="sz_20">17.8dp</dimen>
     <dimen name="sz_22">19.6dp</dimen>
     <dimen name="sz_24">21.3dp</dimen>

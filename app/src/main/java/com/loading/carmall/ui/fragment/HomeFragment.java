@@ -27,6 +27,7 @@ import com.google.gson.reflect.TypeToken;
 import com.loading.carmall.App;
 import com.loading.carmall.R;
 import com.loading.carmall.adapter.HomeFrgAdapter;
+import com.loading.carmall.adapter.HomeFrgBodyAdapter;
 import com.loading.carmall.adapter.HomeFrgHotBrandAdapter;
 import com.loading.carmall.base.BaseFrg;
 import com.loading.carmall.bean.ArticleGetheadlinesBean;
@@ -38,13 +39,10 @@ import com.loading.carmall.bean.IndexCarFindBean;
 import com.loading.carmall.bean.ShabiBean;
 import com.loading.carmall.common.Contstant;
 import com.loading.carmall.common.UrlPath;
-import com.loading.carmall.mock.HeaderRecyclerAndFooterWrapperAdapter;
-import com.loading.carmall.adapter.HomeFrgBodyAdapter;
 import com.loading.carmall.mock.ViewHolder;
 import com.loading.carmall.service.LocationService;
 import com.loading.carmall.ui.activity.CustomActivity;
 import com.loading.carmall.ui.activity.DiscountedActivity;
-import com.loading.carmall.ui.activity.GoodsDetailActivity;
 import com.loading.carmall.ui.activity.GroupBuyActivity;
 import com.loading.carmall.ui.activity.LocationSelectedActivity;
 import com.loading.carmall.ui.activity.NewCarsActivity;
@@ -58,7 +56,6 @@ import com.loading.carmall.ui.weiget.marquee.MarqueeFactory;
 import com.loading.carmall.ui.weiget.marquee.MarqueeView;
 import com.loading.carmall.ui.weiget.marquee.NoticeMF;
 import com.loading.carmall.utils.IndexCarFind;
-import com.loading.carmall.utils.WeakRefHander;
 import com.loading.carmall.utils.okhttp.OkHttpUtils;
 import com.loading.carmall.utils.okhttp.callback.MxbStringCallback;
 
@@ -96,7 +93,7 @@ public class HomeFragment extends BaseFrg implements View.OnClickListener,
     LinearLayout mLySearch;
     //内部的的普通Adapter
     private HomeFrgBodyAdapter mBodyAdapter;
-    private HeaderRecyclerAndFooterWrapperAdapter mAdapter;
+    private HomeFrgAdapter mAdapter;
     private LinearLayoutManager mLayoutManager;
     private HomeSuspensionDecoration mDecoration;
     /**
@@ -127,7 +124,7 @@ public class HomeFragment extends BaseFrg implements View.OnClickListener,
     public void onDestroyView() {
         super.onDestroyView();
         OkHttpUtils.getInstance().cancelTag(this);
-        mHandler.clear();
+        mHandler.removeCallbacksAndMessages(null);
         ButterKnife.unbind(this);
     }
 
@@ -142,10 +139,12 @@ public class HomeFragment extends BaseFrg implements View.OnClickListener,
         return fragment;
     }
 
-    WeakRefHander mHandler = new WeakRefHander(new Handler.Callback() {
+    Handler mHandler = new Handler(new Handler.Callback() {
         @Override
         public boolean handleMessage(Message msg) {
+            Log.d("HomeFragment", "msg.what:" + msg.what);
             switch (msg.what) {
+
                 case RECEIVE_LOCATION:
                     Bundle data = msg.getData();
                     String city = data.getString("city");
@@ -261,7 +260,7 @@ public class HomeFragment extends BaseFrg implements View.OnClickListener,
                                     startActivity(new Intent(getActivity(), SecondHandActivity.class));
                                 }
                             });
-                            //团购
+                            //限时团购
                             LinearLayout mLyGroupBuy = holder.getView(R.id.ly_group);
                             mLyGroupBuy.setOnClickListener(new View.OnClickListener() {
                                 @Override
@@ -270,6 +269,7 @@ public class HomeFragment extends BaseFrg implements View.OnClickListener,
                                 }
                             });
 
+                            //私人定制
                             LinearLayout mlyCustom = holder.getView(R.id.ly_custom);
                             mlyCustom.setOnClickListener(new View.OnClickListener() {
                                 @Override

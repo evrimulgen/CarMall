@@ -111,7 +111,7 @@
                 android:layout_height="wrap_content"
                 android:textColor="@color/colorTextPrimary"
                 android:layout_marginTop="5dp"
-                android:text="团购"/>
+                android:text="限时团购"/>
         </LinearLayout>
 
         <LinearLayout
@@ -133,7 +133,7 @@
                 android:layout_height="wrap_content"
                 android:textColor="@color/colorTextPrimary"
                 android:layout_marginTop="5dp"
-                android:text="定制"/>
+                android:text="私人定制"/>
         </LinearLayout>
     </LinearLayout>
 

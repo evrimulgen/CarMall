@@ -1,0 +1,446 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/sz_30"
+            android:layout_marginStart="@dimen/sz_12"
+            android:lines="1"
+            android:paddingBottom="@dimen/sz_4"
+            android:paddingTop="@dimen/sz_6"
+            android:text="要硬的身姿风度是那么迷人，几乎完美，既定123"
+            android:textColor="@color/colorTextPrimary"
+            android:textSize="@dimen/sz_15"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="14dp"
+                android:layout_height="14dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="@dimen/sz_12"
+                android:layout_marginTop="@dimen/sz_2"
+                android:src="@drawable/ic_money"/>
+
+            <TextView
+                android:id="@+id/textView8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="614.2万"
+                android:textColor="@color/colorTextOrange"
+                android:textSize="@dimen/sz_17"/>
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/sz_12"
+            android:layout_marginTop="@dimen/sz_2"
+            android:text="新车不含税: 84.6万"
+            android:textColor="@color/colorTextHint"
+            android:textSize="@dimen/sz_13"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:layout_marginTop="6dp"
+            android:background="@color/lineGray"/>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="@dimen/sz_16"
+            android:layout_marginTop="@dimen/sz_16"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:id="@+id/ly_bargain"
+                android:layout_width="@dimen/sz_130"
+                android:layout_height="@dimen/sz_38"
+                android:background="@drawable/shape_rectangle_orange_line_raduio"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="@dimen/sz_14"
+                    android:layout_height="@dimen/sz_14"
+                    android:src="@drawable/ic_bargain"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/sz_6"
+                    android:text="我要砍价"
+                    android:textColor="@color/colorTextOrange"
+                    android:textSize="@dimen/sz_13"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ly_notify"
+                android:layout_width="@dimen/sz_130"
+                android:layout_height="@dimen/sz_38"
+                android:layout_marginStart="@dimen/sz_50"
+                android:background="@drawable/shape_rectangle_orange_line_raduio"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="@dimen/sz_14"
+                    android:layout_height="@dimen/sz_14"
+                    android:src="@drawable/ic_bell"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/sz_6"
+                    android:text="降价通知"
+                    android:textColor="@color/colorTextOrange"
+                    android:textSize="@dimen/sz_13"/>
+            </LinearLayout>
+        </LinearLayout>
+
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:layout_marginEnd="@dimen/sz_12"
+            android:layout_marginStart="@dimen/sz_12"
+            android:background="@color/lineGray"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/sz_52"
+            android:layout_marginEnd="@dimen/sz_12"
+            android:layout_marginStart="@dimen/sz_12"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text="5.99万公里"
+                    android:textColor="@color/colorTextSecondary"
+                    android:textSize="@dimen/sz_15"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="@dimen/sz_6"
+                    android:text="行驶里程"
+                    android:textColor="@color/colorTextHint"
+                    android:textSize="@dimen/sz_14"/>
+            </LinearLayout>
+
+            <View
+                android:layout_width="1px"
+                android:layout_height="match_parent"
+                android:background="@color/lineGray"/>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text="5.99万公里"
+                    android:textColor="@color/colorTextSecondary"
+                    android:textSize="@dimen/sz_15"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="@dimen/sz_6"
+                    android:text="行驶里程"
+                    android:textColor="@color/colorTextHint"
+                    android:textSize="@dimen/sz_14"/>
+            </LinearLayout>
+
+            <View
+                android:layout_width="1px"
+                android:layout_height="match_parent"
+                android:background="@color/lineGray"/>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text="5.99万公里"
+                    android:textColor="@color/colorTextSecondary"
+                    android:textSize="@dimen/sz_15"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="@dimen/sz_6"
+                    android:text="行驶里程"
+                    android:textColor="@color/colorTextHint"
+                    android:textSize="@dimen/sz_14"/>
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:layout_marginEnd="@dimen/sz_12"
+            android:layout_marginStart="@dimen/sz_12"
+            android:background="@color/lineGray"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/sz_52"
+            android:layout_marginEnd="@dimen/sz_12"
+            android:layout_marginStart="@dimen/sz_12"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text="5.99万公里"
+                    android:textColor="@color/colorTextSecondary"
+                    android:textSize="@dimen/sz_15"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="@dimen/sz_6"
+                    android:text="行驶里程"
+                    android:textColor="@color/colorTextHint"
+                    android:textSize="@dimen/sz_14"/>
+            </LinearLayout>
+
+            <View
+                android:layout_width="1px"
+                android:layout_height="match_parent"
+                android:background="@color/lineGray"/>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text="5.99万公里"
+                    android:textColor="@color/colorTextSecondary"
+                    android:textSize="@dimen/sz_15"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="@dimen/sz_6"
+                    android:text="行驶里程"
+                    android:textColor="@color/colorTextHint"
+                    android:textSize="@dimen/sz_14"/>
+            </LinearLayout>
+
+            <View
+                android:layout_width="1px"
+                android:layout_height="match_parent"
+                android:background="@color/lineGray"/>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text="5.99万公里"
+                    android:textColor="@color/colorTextSecondary"
+                    android:textSize="@dimen/sz_15"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="@dimen/sz_6"
+                    android:text="行驶里程"
+                    android:textColor="@color/colorTextHint"
+                    android:textSize="@dimen/sz_14"/>
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:layout_marginEnd="@dimen/sz_12"
+            android:layout_marginStart="@dimen/sz_12"
+            android:background="@color/lineGray"/>
+
+        <LinearLayout
+            android:id="@+id/ly_parameter"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/sz_42"
+            android:layout_marginTop="@dimen/sz_14"
+            android:background="@color/backgroundGray"
+            android:orientation="horizontal"
+            android:paddingStart="@dimen/sz_12"
+            tools:ignore="RtlSymmetry">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1"
+                android:text="查看更多参数配置"
+                android:textColor="@color/colorTextHint"
+
+                android:textSize="@dimen/sz_15"/>
+
+            <ImageView
+                android:layout_width="@dimen/sz_20"
+                android:layout_height="@dimen/sz_20"
+                android:layout_gravity="center_vertical"
+                android:layout_marginEnd="@dimen/sz_16"
+                android:src="@drawable/ic_arrow_right"/>
+        </LinearLayout>
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/sz_74">
+
+        <ImageView
+            android:id="@+id/iv_sale_header"
+            android:layout_width="@dimen/sz_48"
+            android:layout_height="@dimen/sz_48"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="@dimen/sz_12"
+            android:scaleType="centerCrop"
+            android:src="@drawable/test_icon"/>
+
+        <TextView
+            android:id="@+id/tv_nickname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/sz_4"
+            android:layout_marginStart="@dimen/sz_8"
+            android:layout_marginTop="@dimen/sz_14"
+            android:layout_toRightOf="@id/iv_sale_header"
+            android:text="吗小布-卖家"
+            android:textColor="@color/colorTextPrimary"
+            android:textSize="@dimen/sz_15"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_nickname"
+            android:layout_marginStart="@dimen/sz_8"
+            android:layout_toRightOf="@id/iv_sale_header"
+            android:text="北京  朝阳"
+            android:textColor="@color/colorTextHint"
+            android:textSize="@dimen/sz_14"/>
+
+        <LinearLayout
+            android:layout_width="@dimen/sz_84"
+            android:layout_height="@dimen/sz_24"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="@dimen/sz_20"
+            android:background="@drawable/shape_rectangle_orange_line_raduio"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="@dimen/sz_12"
+                android:layout_height="@dimen/sz_12"
+                android:src="@drawable/ic_bargain"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/sz_6"
+                android:text="咨询"
+                android:textColor="@color/colorTextPrimary"
+                android:textSize="@dimen/sz_13"/>
+        </LinearLayout>
+    </RelativeLayout>
+
+    <com.loading.carmall.ui.weiget.StateTextView
+        style="?android:attr/borderlessButtonStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_marginEnd="@dimen/sz_12"
+        android:layout_marginStart="@dimen/sz_12"
+        android:clickable="false"
+        android:gravity="center"
+        android:lineSpacingMultiplier="1.3"
+        android:lines="3"
+        android:padding="14dp"
+        android:text="@string/test_text"
+        android:textColor="@color/colorTextPrimary"
+        android:textSize="16sp"
+        app:normalBackgroundColor="#f4f4f4"
+        app:normalStrokeColor="@color/lineGray"
+        app:normalStrokeWidth="1px"
+        app:radius="6dp"
+        />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:background="@color/backgroundGray"
+        android:layout_marginTop="@dimen/sz_8"/>
+</LinearLayout>

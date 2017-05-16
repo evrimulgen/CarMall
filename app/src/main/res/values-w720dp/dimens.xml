@@ -5,11 +5,13 @@
     <dimen name="sz_8">18.0dip</dimen>
     <dimen name="sz_10">22.5dip</dimen>
     <dimen name="sz_12">27.0dip</dimen>
-
+    <dimen name="sz_13">29.25dip</dimen>
     <dimen name="sz_14">31.5dip</dimen>
+    <dimen name="sz_15">33.75dip</dimen>
     <dimen name="sz_16">36.0dip</dimen>
+    <dimen name="sz_17">38.25dip</dimen>
     <dimen name="sz_18">40.5dip</dimen>
-
+    <dimen name="sz_19">42.75dip</dimen>
     <dimen name="sz_20">45.0dip</dimen>
 
     <dimen name="sz_40">90.0dip</dimen>
@@ -44,8 +46,6 @@
     <dimen name="sz_255">573.75dip</dimen>
     <dimen name="sz_295">663.75dip</dimen>
     <dimen name="sz_335">753.75dip</dimen>
-
-
 
 
 </resources>

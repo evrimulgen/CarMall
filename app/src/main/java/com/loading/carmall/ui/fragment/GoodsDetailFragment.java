@@ -117,7 +117,7 @@ public class GoodsDetailFragment extends LazyBaseFragment implements SwipeRefres
     }
 
 
-    @Override
+       @Override
     public void onDestroyView() {
         super.onDestroyView();
         ButterKnife.unbind(this);

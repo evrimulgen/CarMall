@@ -54,10 +54,18 @@ public class SecondHandActivity extends BaseAty implements BaseQuickAdapter.Requ
 
         mRecyclerView.setLayoutManager(new LinearLayoutManager(mActivity));
         BaseQuickAdapter<Status, BaseViewHolder> adapter = new BaseQuickAdapter<Status,
-                BaseViewHolder>(R.layout.item_second_hand_aty, DataServer.getSampleData(30)) {
+                BaseViewHolder>(
+                        R.layout.item_second_hand_aty, DataServer.getSampleData(30)) {
             @Override
             protected void convert(BaseViewHolder helper, Status item) {
                 int position = helper.getLayoutPosition();
+                LinearLayout container = helper.getView(R.id.container);
+                container.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        startActivity(new Intent(mActivity,UsedDetailActivity.class));
+                    }
+                });
 
 
             }

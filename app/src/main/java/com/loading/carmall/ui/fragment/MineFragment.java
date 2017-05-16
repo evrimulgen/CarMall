@@ -33,10 +33,17 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 import static com.baidu.location.d.j.r;
-
+/**
+    *Created by 马小布 on 2017/5/16.
+    *Project : 易购汽车
+    *Program Name :  com.loading.carmall.ui.fragment.MineFragment.java
+    *Author :马庆龙 on 2017/5/16 8:53
+    *email:maxiaobu1999@163.com
+    *功能：个人中心
+    *伪码：
+    *待完成：
+*/
 public class MineFragment extends BaseFrg implements View.OnClickListener {
-
-
     @Bind(R.id.tv_title_common)
     TextView mTvTitleCommon;
     @Bind(R.id.iv_share)
@@ -69,19 +76,6 @@ public class MineFragment extends BaseFrg implements View.OnClickListener {
         return fragment;
     }
 
-
-    @Override
-    public void onAttach(Context context) {
-        super.onAttach(context);
-        Log.d("MineFragment", "onAttach");
-    }
-
-    @Override
-    public void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        Log.d("MineFragment", "onCreate");
-    }
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -94,41 +88,11 @@ public class MineFragment extends BaseFrg implements View.OnClickListener {
     }
 
     @Override
-    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
-        Log.d("MineFragment", "onActivityCreated");
-        super.onActivityCreated(savedInstanceState);
-    }
-
-    @Override
-    public void onStart() {
-        Log.d("MineFragment", "onStart");
-        super.onStart();
-    }
-
-    @Override
-    public void onPause() {
-        Log.d("MineFragment", "onPause");
-        super.onPause();
-    }
-
-    @Override
-    public void onStop() {
-        Log.d("MineFragment", "onStop");
-        super.onStop();
-    }
-
-    @Override
     public void onDestroyView() {
-        Log.d("MineFragment", "onDestroyView");
         super.onDestroyView();
         ButterKnife.unbind(this);
     }
 
-    @Override
-    public void onDestroy() {
-        Log.d("MineFragment", "onDestroy");
-        super.onDestroy();
-    }
 
     @Override
     public void initView() {
@@ -145,20 +109,6 @@ public class MineFragment extends BaseFrg implements View.OnClickListener {
     public MineFragment() {
 
     }
-
-    @Override
-    public void onSaveInstanceState(Bundle outState) {
-        Log.d("MineFragment", "onSaveInstanceState");
-        super.onSaveInstanceState(outState);
-    }
-
-
-    @Override
-    public void onAttachFragment(Fragment childFragment) {
-        Log.d("MineFragment", "onAttachFragment");
-        super.onAttachFragment(childFragment);
-    }
-
     @OnClick({R.id.ly_mine_message, R.id.ly_common_problem, R.id.ly_schedule,
             R.id.ly_order, R.id.ly_feedback, R.id.ly_setting,R.id.iv_avatar,R.id.iv_share})
     @Override
@@ -193,6 +143,7 @@ public class MineFragment extends BaseFrg implements View.OnClickListener {
             case R.id.iv_avatar:
                 startActivity(new Intent(getActivity(), ProfileActivity.class));
                 break;
+            //分享
             case R.id.iv_share:
                 startActivity(new Intent(getActivity(), LoginActivity.class));
                 break;

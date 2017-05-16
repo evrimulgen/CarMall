@@ -19,7 +19,7 @@ public class HomeFrgAdapter extends HeaderRecyclerAndFooterWrapperAdapter
         BGABanner.Adapter<ImageView, ArticlegetbannnerBean.DataBean> {
     private Activity mActivity;
 
-    protected HomeFrgAdapter(Activity activity, RecyclerView.Adapter mInnerAdapter) {
+    public HomeFrgAdapter(Activity activity, RecyclerView.Adapter mInnerAdapter) {
         this(mInnerAdapter);
         mActivity = activity;
     }

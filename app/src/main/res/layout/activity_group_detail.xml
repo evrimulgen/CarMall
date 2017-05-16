@@ -1,10 +1,576 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    android:orientation="vertical"
+<FrameLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.loading.carmall.ui.activity.GroupDetailActivity">
 
-</LinearLayout>
+    <include layout="@layout/common_title"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="50dp"
+        android:layout_marginTop="48dp"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <com.loading.carmall.ui.weiget.banner.BGABanner
+                android:id="@+id/banner"
+                android:layout_width="match_parent"
+                android:layout_height="190dp"
+                app:banner_pageChangeDuration="1000"
+                app:banner_pointAutoPlayAble="true"
+                app:banner_pointAutoPlayInterval="10000"
+                app:banner_pointContainerBackground="@android:color/transparent"
+                app:banner_pointDrawable="@drawable/bga_banner_selector_point_hollow"
+                app:banner_pointLeftRightMargin="5dp"
+                app:banner_pointTopBottomMargin="6dp"
+                app:banner_transitionEffect="alpha"/>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/sz_14"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="团购品牌:"
+                    android:textColor="@color/colorTextHint"
+                    android:textSize="15sp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="6dp"
+                    android:text="拉斯莱斯"
+                    android:textColor="@color/colorTextPrimary"
+                    android:textSize="15sp"
+                    />
+            </LinearLayout>
+            <!--品牌车系:-->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/sz_14"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="品牌车系:"
+                    android:textColor="@color/colorTextHint"
+                    android:textSize="15sp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="6dp"
+                    android:text="幻影系列"
+                    android:textColor="@color/colorTextPrimary"
+                    android:textSize="15sp"
+                    />
+            </LinearLayout>
+            <!--团购时间-->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/sz_14"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="团购时间:"
+                    android:textColor="@color/colorTextHint"
+                    android:textSize="15sp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="6dp"
+                    android:text="2017 年 04 月 23 日  15：00"
+                    android:textColor="@color/colorTextPrimary"
+                    android:textSize="15sp"
+                    />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/sz_14"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="团购地点:"
+                    android:textColor="@color/colorTextHint"
+                    android:textSize="15sp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/sz_40"
+                    android:layout_marginStart="6dp"
+                    android:lines="1"
+                    android:text="@string/test_text"
+                    android:textColor="@color/colorTextPrimary"
+                    android:textSize="15sp"
+                    />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/sz_14"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="温馨提示:"
+                    android:textColor="#DA3329"
+                    android:textSize="15sp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/sz_40"
+                    android:layout_marginStart="6dp"
+                    android:lines="1"
+                    android:text="@string/test_text"
+                    android:textColor="#DA3329"
+                    android:textSize="15sp"
+                    />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/sz_14"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
+
+                <com.loading.carmall.ui.weiget.StateTextView
+                    style="?android:attr/borderlessButtonStyle"
+                    android:layout_width="70dp"
+                    android:layout_height="24dp"
+                    android:layout_gravity="center_vertical"
+                    android:clickable="false"
+                    android:gravity="center"
+                    android:padding="0dp"
+                    android:text="优惠"
+                    android:textColor="@color/white"
+                    android:textSize="15sp"
+                    app:normalBackgroundColor="@color/backgroundOrange"
+                    app:pressedBackgroundColor="@color/colorTextOrange"
+                    app:radius="4dp"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginEnd="@dimen/sz_40"
+                    android:layout_marginStart="6dp"
+                    android:lines="1"
+                    android:text="惊喜团购价格现场公布"
+                    android:textColor="@color/colorTextPrimary"
+                    android:textSize="15sp"
+                    />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/sz_14"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
+
+                <com.loading.carmall.ui.weiget.StateTextView
+                    style="?android:attr/borderlessButtonStyle"
+                    android:layout_width="70dp"
+                    android:layout_height="24dp"
+                    android:layout_gravity="center_vertical"
+                    android:clickable="false"
+                    android:gravity="center"
+                    android:padding="0dp"
+                    android:text="促销"
+                    android:textColor="@color/white"
+                    android:textSize="15sp"
+                    app:normalBackgroundColor="#FF763D"
+                    app:pressedBackgroundColor="#FF763D"
+                    app:radius="4dp"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginEnd="@dimen/sz_4"
+                    android:layout_marginStart="6dp"
+                    android:lines="1"
+                    android:text="到点领取好礼"
+                    android:textColor="@color/colorTextPrimary"
+                    android:textSize="15sp"
+                    />
+
+                <ImageView
+                    android:layout_width="22dp"
+                    android:layout_height="22dp"
+                    android:layout_gravity="center_vertical"
+                    android:src="@drawable/ic_present"/>
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="8dp"
+                android:layout_marginTop="10dp"
+                android:background="@color/backgroundGray"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="6dp"
+                android:layout_marginStart="@dimen/sz_14"
+                android:layout_marginTop="6dp"
+                android:text="团购流程"
+                android:textColor="@color/colorTextPrimary"
+                android:textSize="18sp"/>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="10dp"
+                android:layout_marginEnd="@dimen/sz_14"
+                android:layout_marginStart="@dimen/sz_14"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="@dimen/sz_60"
+                    android:layout_height="@dimen/sz_60"
+                    android:background="@drawable/bg_round_orange"
+                    android:gravity="center"
+                    android:text="免费\n报名"
+                    android:textColor="@color/white"
+                    android:textSize="15sp"/>
+
+                <ImageView
+                    android:layout_width="26dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginEnd="6dp"
+                    android:layout_marginStart="6dp"
+                    android:scaleType="center"
+                    android:src="@drawable/ic_group_arrow"/>
+
+                <TextView
+                    android:layout_width="@dimen/sz_60"
+                    android:layout_height="@dimen/sz_60"
+                    android:background="@drawable/bg_round_orange"
+                    android:gravity="center"
+                    android:text="免费\n报名"
+                    android:textColor="@color/white"
+                    android:textSize="15sp"/>
+
+                <ImageView
+                    android:layout_width="26dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginEnd="6dp"
+                    android:layout_marginStart="6dp"
+                    android:scaleType="center"
+                    android:src="@drawable/ic_group_arrow"/>
+
+                <TextView
+                    android:id="@+id/textView7"
+                    android:layout_width="@dimen/sz_60"
+                    android:layout_height="@dimen/sz_60"
+                    android:background="@drawable/bg_round_orange"
+                    android:gravity="center"
+                    android:text="免费\n报名"
+                    android:textColor="@color/white"
+                    android:textSize="15sp"/>
+
+                <ImageView
+                    android:id="@+id/imageView2"
+                    android:layout_width="26dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginEnd="6dp"
+                    android:layout_marginStart="6dp"
+                    android:scaleType="center"
+                    android:src="@drawable/ic_group_arrow"/>
+
+                <TextView
+                    android:id="@+id/textView6"
+                    android:layout_width="@dimen/sz_60"
+                    android:layout_height="@dimen/sz_60"
+                    android:background="@drawable/bg_round_orange"
+                    android:gravity="center"
+                    android:text="免费\n报名"
+                    android:textColor="@color/white"
+                    android:textSize="15sp"/>
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:background="@color/lineGray"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:layout_marginStart="@dimen/sz_14"
+                android:layout_marginTop="10dp"
+                android:text="我们的优势"
+                android:textColor="@color/colorTextPrimary"
+                android:textSize="18sp"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical"
+                    android:orientation="vertical"
+                    >
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginBottom="6dp"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="38dp"
+                            android:layout_height="38dp"
+                            android:layout_marginEnd="10dp"
+                            android:src="@drawable/icon_group1"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:text="省心"
+                            android:textColor="@color/colorTextPrimary"
+                            android:textSize="16sp"/>
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="为您提供贴心的售后服务"
+                        android:textColor="@color/colorTextHint"
+                        android:textSize="14sp"/>
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="1px"
+                    android:layout_height="match_parent"
+                    android:background="@color/lineGray"/>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical"
+                    android:orientation="vertical"
+                    >
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginBottom="6dp"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="38dp"
+                            android:layout_height="38dp"
+                            android:layout_marginEnd="10dp"
+                            android:src="@drawable/icon_group2"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:text="省力"
+                            android:textColor="@color/colorTextPrimary"
+                            android:textSize="16sp"/>
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginStart="4dp"
+                        android:text="为您提供专业的购车指导"
+                        android:textColor="@color/colorTextHint"
+                        android:textSize="14sp"/>
+
+                </LinearLayout>
+            </LinearLayout>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:background="@color/lineGray"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical"
+                    android:orientation="vertical"
+                    >
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginBottom="6dp"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="38dp"
+                            android:layout_height="38dp"
+                            android:layout_marginEnd="10dp"
+                            android:src="@drawable/icon_group3"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:text="省钱"
+                            android:textColor="@color/colorTextPrimary"
+                            android:textSize="16sp"/>
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="为您谈到靠谱的优惠"
+                        android:textColor="@color/colorTextHint"
+                        android:textSize="14sp"/>
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="1px"
+                    android:layout_height="match_parent"
+                    android:background="@color/lineGray"/>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical"
+                    android:orientation="vertical"
+                    >
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginBottom="6dp"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="38dp"
+                            android:layout_height="38dp"
+                            android:layout_marginEnd="10dp"
+                            android:src="@drawable/icon_group4"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:text="省时"
+                            android:textColor="@color/colorTextPrimary"
+                            android:textSize="16sp"/>
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginStart="4dp"
+                        android:text="为您筛选优质的经销商"
+                        android:textColor="@color/colorTextHint"
+                        android:textSize="14sp"/>
+                </LinearLayout>
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:layout_marginTop="10dp"
+                android:background="@color/lineGray"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:layout_marginStart="@dimen/sz_14"
+                android:layout_marginTop="10dp"
+                android:text="常见问题"
+                android:textColor="@color/colorTextPrimary"
+                android:textSize="18sp"/>
+        </LinearLayout>
+    </ScrollView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_gravity="bottom"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="#FAAD81"
+            android:gravity="center"
+            android:text="已报名40人"
+            android:textColor="@color/white"
+            android:textSize="18sp"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="#FEB781"
+            android:gravity="center"
+            android:text="立即报名"
+            android:textColor="@color/white"
+            android:textSize="18sp"/>
+    </LinearLayout>
+</FrameLayout>

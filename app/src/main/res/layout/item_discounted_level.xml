@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+             xmlns:app="http://schemas.android.com/apk/res-auto"
+             xmlns:tools="http://schemas.android.com/tools"
+             android:id="@id/container"
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:layout_marginEnd="10dp"
+             android:layout_marginStart="10dp"
+             android:orientation="vertical"
+             android:paddingTop="10dp">
+
+    <com.loading.carmall.ui.weiget.StateTextView
+        android:id="@id/text_view"
+        style="?android:attr/borderlessButtonStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:clickable="false"
+        android:gravity="center"
+        android:padding="4dp"
+        tools:text="菲力宾"
+        android:textColor="@color/colorTextSecondary"
+        android:textSize="16sp"
+        app:normalBackgroundColor="@color/white"
+        app:normalStrokeColor="@color/colorTextSecondary"
+        app:normalStrokeWidth="1px"
+        app:pressedStrokeColor="@android:color/holo_red_light"
+        app:pressedStrokeWidth="1px"
+        app:pressedTextColor="@android:color/holo_red_light"/>
+</FrameLayout>

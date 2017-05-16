@@ -4,7 +4,7 @@ android {
     compileSdkVersion 25
     buildToolsVersion "25.0.2"
     defaultConfig {
-        applicationId "com.loading.carmall"
+        applicationId "com.runfutong.easybuycar"
         resConfigs "en", "fr"//其他未显式声明的语言资源将被移除
         minSdkVersion 17
         targetSdkVersion 25

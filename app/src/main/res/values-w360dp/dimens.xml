@@ -7,9 +7,13 @@
     <dimen name="sz_9">9.00dip</dimen>
     <dimen name="sz_10">10dip</dimen>
     <dimen name="sz_12">12dip</dimen>
+    <dimen name="sz_13">13dip</dimen>
     <dimen name="sz_14">14dip</dimen>
+    <dimen name="sz_15">15dip</dimen>
     <dimen name="sz_16">16dip</dimen>
+    <dimen name="sz_17">17dip</dimen>
     <dimen name="sz_18">18dip</dimen>
+    <dimen name="sz_19">19dip</dimen>
     <dimen name="sz_20">20dip</dimen>
     <dimen name="sz_22">22dip</dimen>
     <dimen name="sz_24">24dip</dimen>

@@ -25,7 +25,7 @@
                 android:layout_width="30dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
-                android:layout_marginLeft="8dp"
+                android:layout_marginStart="10dp"
                 android:src="@drawable/ic_second_hand_buy"/>
 
             <TextView
@@ -42,9 +42,9 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="bottom"
                 android:layout_marginBottom="4dp"
-                android:layout_marginRight="6dp"
+                android:layout_marginEnd="10dp"
 
-                android:gravity="right"
+                android:gravity="end"
                 android:text="多种车源"
                 android:textColor="@color/colorTextPrimary"
                 android:textSize="16sp"/>
